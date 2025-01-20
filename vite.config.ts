@@ -84,6 +84,16 @@ export default defineConfig(({ mode }) => {
         }
       })
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // 自動引入全域 SCSS 變數
+          additionalData: `
+          @import "@/assets/scss/variables.main.scss";
+          `
+        }
+      }
+    },
     /** 快捷路徑設定 */
     resolve: {
       alias: {
