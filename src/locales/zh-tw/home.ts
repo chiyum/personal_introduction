@@ -1,4 +1,7 @@
 export default {
   title: "{author}'s",
-  description: "personal introduction"
+  name: "HOHO",
+  jobTitle: "user experience designer",
+  connect: "Let's Connect",
+  skills: "Skills I have"
 };
