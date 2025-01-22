@@ -1,15 +1,15 @@
 @import "./reset";
+
 html,
 body {
   // height: 100%;
-  font-family:
-    "Outfit",
-    "微軟正黑體",
-    Microsoft JhengHei,
-    Tahoma,
-    Geneva,
-    Verdana,
-    sans-serif;
+  font-family: "Outfit",
+  "微軟正黑體",
+  Microsoft JhengHei,
+  Tahoma,
+  Geneva,
+  Verdana,
+  sans-serif;
   overflow-x: hidden;
 }
 
@@ -30,8 +30,8 @@ body {
 
 .layout-default {
   min-height: 100vh;
-  background-color: var(   --dark-100);
-  background-color: var( --dark-100);
+  background-color: var(--dark-100);
+  background-color: var(--dark-100);
 
   &-head {
     display: flex;
@@ -39,38 +39,42 @@ body {
     align-items: center;
     position: sticky;
     width: 100%;
-    padding: 30px 64px 20px  64px;
+    padding: 30px 64px 20px 64px;
     top: 0;
-  
-    @include desktop{
-      padding: 20px 0 0 0 ;
+
+    @include desktop {
+      padding: 20px 0 0 0;
     }
-    &-frontPage{  
+
+    &-frontPage {
       border: 2px solid var(--white);
       background-color: var(--dark-100);
       color: var(--white);
       padding: 10px 22px;
-    font-size: 30px;
-      font-family:  var(--fontConcertOne);
+      font-size: 30px;
+      font-family: var(--fontConcertOne);
       font-weight: 700;
       line-height: 1.35;
       border-radius: 100%;
       margin-left: 20px;
       cursor: pointer;
-      @include desktop{
+      @include desktop {
         padding: 10px 18px;
-        font-size: 20px;      }
+        font-size: 20px;
+      }
     }
 
   }
-  &-linkBar{    
+
+  &-linkBar {
     display: flex;
     justify-content: center;
     gap: 16px;
-    @include desktop{
+    @include desktop {
       display: none;
     }
-    a{
+
+    a {
       display: flex;
       border: 2px solid var(--white);
       background-color: var(--dark-100);
@@ -81,74 +85,92 @@ body {
       align-items: flex-start;
       padding: 16px 24px;
       font-size: 20px;
-      font-family:  var(--fontConcertOne);
+      font-family: var(--fontConcertOne);
       font-weight: 700;
       line-height: 1.35;
-      position: relative;}
+      position: relative;
+    }
   }
-  &-link{display: flex;
+
+  &-link {
+    display: flex;
     justify-content: center;
-  align-items: center;
-  gap: 16px;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.35;
-  border: 2px solid var(--white);
+    align-items: center;
+    gap: 16px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+    border: 2px solid var(--white);
     background-color: var(--dark-100);
     color: var(--white);
     padding: 8px 20px;
     border-radius: 8px;
-  
-    @include tablet{
-      font-size: 16px;
-          }}
-  
-  &-img{width: 30px;
-    height: 30px;}
-          &-connect{
-display: none;
-        @include desktop{
-          display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-        padding: 8px 20px;
-        }
 
- 
+    @include tablet {
+      font-size: 16px;
+    }
   }
-  &connectBar{
+
+  &-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  &-connect {
+    display: none;
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 20px;
+    }
+
+
+  }
+
+  &connectBar {
     border: 2px solid var(--white);
     background-color: var(--dark-100);
     color: var(--white);
     padding: 16px 24px;
     font-size: 20px;
-    font-family:  var(--fontConcertOne);
+    font-family: var(--fontConcertOne);
     font-weight: 700;
     line-height: 1.35;
-    border-radius: 100%;  }
-    &-suspension{position: fixed;
-      z-index: 999;
-      transform: translateY(-50%);
-      top: 50%;
-      right: 0;}
-      &-suspensionBar{
-        display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 28px;
-gap: 20px;
-            background: var(--primary-200);
-            color: var(--white);
-            height: 160px;
-            width: 50px;
-          &--text{    display: inline-block;
-            transform: rotate(-90deg);
-            transform-origin: center;
-            font-size: 18px;}}
+    border-radius: 100%;
+  }
+
+  &-suspension {
+    position: fixed;
+    z-index: 999;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+  }
+
+  &-suspensionBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+    gap: 20px;
+    background: var(--primary-200);
+    color: var(--white);
+    height: 160px;
+    width: 50px;
+
+    &--text {
+      display: inline-block;
+      transform: rotate(-90deg);
+      transform-origin: center;
+      font-size: 18px;
+    }
+  }
 }
-.connectLink{
+
+.connectLink {
   padding: 6px 10px;
   border-radius: 100%;
   cursor: pointer;
