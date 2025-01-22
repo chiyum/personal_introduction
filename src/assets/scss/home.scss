@@ -69,13 +69,15 @@
       display: flex;
       position: relative;
       background: var(--primary-100);
+      color: var(--white);
     }
 
     color: var(--white);
 
     &--img {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
+      margin-left: 10px;
     }
 
     h2 {

@@ -11,16 +11,16 @@ import ArchAnimation from "@/components/arch-animation.vue";
     <div class="layout-default-head">
       <a class="layout-default-head-frontPage">a</a>
       <div class="layout-default-linkBar">
-        <arch-animation color="#ffffff">
+        <arch-animation color="#ffffff" border-radius="8px">
           <a class="layout-default-link"> Portfolio </a>
         </arch-animation>
-        <arch-animation color="#ffffff">
+        <arch-animation color="#ffffff" border-radius="8px">
           <a class="layout-default-link">About Me</a>
         </arch-animation>
-        <arch-animation color="#ffffff">
+        <arch-animation color="#ffffff" border-radius="8px">
           <a class="layout-default-link">Blog</a>
         </arch-animation>
-        <arch-animation direction="top" color="#ffffff">
+        <arch-animation direction="top" color="#ffffff" border-radius="8px">
           <a class="layout-default-link"
             >Link
             <img
