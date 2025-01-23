@@ -10,21 +10,21 @@
     padding-right: 0;  }
   &-titleName{
     display: none; 
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px;
-  @include desktop{
-  display: flex;
-  }
-&--name{
-  color: var(--white);
-  font-family:  var(--fontConcertOne);
-font-size: 28vw;
-
-}
-}
-    &-bar{
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    @include desktop{
     display: flex;
+    }
+    &--name{
+    color: var(--white);
+    font-family:  var(--fontConcertOne);
+    font-size: 28vw;}}
+
+  &-bar {
+    //display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
   }
   &-left{
     display: flex;
@@ -106,14 +106,23 @@ font-size: 28vw;
     font-style: italic;
     line-height: 1.1;}  
   }
-  &-right{
+
+  &-right {
+    position: relative;
+    //width: 50%;
     display: flex;
     justify-content: center;
-    @include desktop{
-      display: none;   }
-    &--img{
-      width: 50%;
-      height: 80%;    }
+    align-items: center;
+    .headshot {
+      position: absolute;
+      width: 120%;
+      height: 130%;
+    }
+
+    &--img {
+      width: 200px;
+      //height: 80%;
+    }
   }
   &-introductionCard{
     @include desktop{    

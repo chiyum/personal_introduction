@@ -3,6 +3,8 @@ import IntroductionCard from "@/components/introductionCard.vue";
 
 import { useI18n } from "@/i18n";
 import { ref } from "vue";
+import HeaderHost from "@/components/headshot.vue";
+import { Vue3Marquee } from "vue3-marquee";
 const { t } = useI18n();
 const images = ref<string[]>([
   new URL("@/assets/images/icon/link.png", import.meta.url).href,
@@ -59,7 +61,7 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
         </div>
         <h2>{{ t("home.skills") }}</h2>
         <div class="marquee">
-          <div class="marquee__inner">
+          <Vue3Marquee>
             <img
               v-for="(image, index) in images"
               :key="index"
@@ -68,38 +70,30 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
             />
             <img
               v-for="(image, index) in images"
-              :key="'duplicate-' + index"
+              :key="index"
               :src="image"
-              :alt="'圖片複製 ' + (index + 1)"
+              :alt="'圖片 ' + (index + 1)"
             />
-          </div>
-          <div class="marquee__inner">
             <img
               v-for="(image, index) in images"
               :key="index"
               :src="image"
               :alt="'圖片 ' + (index + 1)"
             />
-            <!-- 重複一次內容，實現無縫效果 -->
-            <img
-              v-for="(image, index) in images"
-              :key="'duplicate-' + index"
-              :src="image"
-              :alt="'圖片複製 ' + (index + 1)"
-            />
-          </div>
-          <div class="marquee-gradient"></div>
+          </Vue3Marquee>
         </div>
       </div>
       <div class="home-right">
-        <img
-          class="home-right--img"
-          srcset="
-            https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202-p-500.png 500w,
-            https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202.png       768w
-          "
-          alt=""
-        />
+        <header-host>
+          <img
+            class="home-right--img"
+            srcset="
+              https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202-p-500.png 500w,
+              https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202.png       768w
+            "
+            alt=""
+          />
+        </header-host>
       </div>
     </div>
     <div class="home-introductionCard">
