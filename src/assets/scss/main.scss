@@ -32,16 +32,16 @@ body {
   min-height: 100vh;
   background-color: var(--dark-100);
   background-color: var(--dark-100);
-
   &-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     width: 100%;
     padding: 30px 64px 20px 64px;
-    top: 0;
-
+    position: fixed;
+    z-index: 999;
+    transform: translateY(-50%);
+    top: 50px;
     @include desktop {
       padding: 20px 0 0 0;
     }
@@ -106,7 +106,7 @@ body {
     color: var(--white);
     padding: 8px 20px;
     border-radius: 8px;
-
+    cursor: pointer;
     @include tablet {
       font-size: 4vw;    }
   }

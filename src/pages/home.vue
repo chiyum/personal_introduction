@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import IntroductionCard from "@/components/introductionCard.vue";
-
+import WorksDisplay from "@/components/worksDisplay.vue";
+import FooterChat from "@/components/footerChat.vue";
+import getImageUrl from "@/utils/getImageUrl";
 import { useI18n } from "@/i18n";
 import { ref } from "vue";
 import HeaderHost from "@/components/headshot.vue";
@@ -11,8 +13,47 @@ const images = ref<string[]>([
   new URL("@/assets/images/icon/link.png", import.meta.url).href,
   new URL("@/assets/images/icon/link.png", import.meta.url).href
 ]);
+const worksDisplayData = ref<object[]>([
+  {
+    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
+    summary: t("home.worksDisplaySummaryOne"),
+    title: "OOOXXX"
+  },
+  {
+    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
+    summary: t("home.worksDisplaySummaryTwo"),
+    title: "OOOXXX"
+  },
+  {
+    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
+    summary: t("home.worksDisplaySummaryThree"),
+    title: "OOOXXX"
+  },
+  {
+    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
+    summary: t("home.worksDisplaySummaryFour"),
+    title: "OOOXXX"
+  },
+  {
+    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
+    summary: t("home.worksDisplaySummaryFive"),
+    title: "OOOXXX"
+  },
+  {
+    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
+    summary: t("home.worksDisplaySummarySix"),
+    title: "OOOXXX"
+  }
+]);
 const titleName = ref(["L", "U", "N", "A"]);
 const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
+const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
 </script>
 
 <template>
@@ -26,7 +67,7 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
         {{ item }}
       </p>
     </div>
-    <div class="home-bar">
+    <section class="home-bar">
       <div class="home-left">
         <div class="home-left--title">
           <p class="home-left--title__text">Hey Y'all</p>
@@ -95,14 +136,20 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
           />
         </header-host>
       </div>
-    </div>
-    <div class="home-introductionCard">
-      <IntroductionCard
-        :title="homeTitle"
-        :narrative="t('introduction-card.homeNarrative')"
-        :content="t('introduction-card.homeConnect')"
-      />
-    </div>
+    </section>
+    <section class="home-introductionBar">
+      <div class="home-introductionCard">
+        <IntroductionCard
+          :title="homeTitle"
+          :narrative="t('home.homeNarrative')"
+          :content="t('home.homeConnect')"
+        />
+      </div>
+      <div class="home-worksDisplay">
+        <WorksDisplay :worksDisplay="worksDisplayData" />
+      </div>
+    </section>
+    <section><FooterChat :title="footerTitle" /></section>
   </div>
 </template>
 

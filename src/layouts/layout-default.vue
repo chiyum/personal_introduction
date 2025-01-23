@@ -1,21 +1,26 @@
 <script setup lang="ts">
-// import { useI18n } from "@/i18n";
+import { useRouter } from "vue-router";
+const router = useRouter();
 
-// const { t } = useI18n();
-// const author = import.meta.env.VITE_PROJECT_AUTHOR;
+const toHome = () => {
+  router.push("/home");
+};
+const toAbout = () => {
+  router.push("/about");
+};
 import ArchAnimation from "@/components/arch-animation.vue";
 </script>
 
 <template>
   <div class="layout-default">
     <div class="layout-default-head">
-      <a class="layout-default-head-frontPage">a</a>
+      <a class="layout-default-head-frontPage" @click="toHome">a</a>
       <div class="layout-default-linkBar">
         <arch-animation color="#ffffff" border-radius="8px">
-          <a class="layout-default-link"> Portfolio </a>
+          <a class="layout-default-link" @click="toHome"> Portfolio </a>
         </arch-animation>
         <arch-animation color="#ffffff" border-radius="8px">
-          <a class="layout-default-link">About Me</a>
+          <a class="layout-default-link" @click="toAbout">About Me</a>
         </arch-animation>
         <arch-animation color="#ffffff" border-radius="8px">
           <a class="layout-default-link">Blog</a>

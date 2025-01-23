@@ -124,11 +124,32 @@
       //height: 80%;
     }
   }
-  &-introductionCard{
+  &-introductionBar{
+    display: flex;
+    flex-direction: column;
+    gap: 128px;
+    padding: 88px 0;
     @include desktop{    
-      padding: 0 24px;}
+      padding: 64px 24px;}
+}
+&-worksDisplay{
+  grid-column-gap: 44px;
+  grid-row-gap: 64px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  padding: 0;
+  display: grid;
+  transform: perspective(600px);
+  @include desktop{    
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-row-gap: 32px;
+
+  }
 }
 }
+
 
 .marquee {
   width: 120%;
