@@ -8,6 +8,7 @@ import { ref } from "vue";
 import HeaderHost from "@/components/headshot.vue";
 import { Vue3Marquee } from "vue3-marquee";
 import { WorkDisplay } from "@/types/home";
+import ArchAnimation from "@/components/arch-animation.vue";
 const { t } = useI18n();
 const images = ref<string[]>([
   new URL("@/assets/images/icon/link.png", import.meta.url).href,
@@ -55,8 +56,6 @@ const worksDisplayData = ref<WorkDisplay[]>([
   }
 ]);
 const titleName = ref(["L", "U", "N", "A"]);
-const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
-const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
 </script>
 
 <template>
@@ -94,14 +93,16 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
               Carolina
             </p>
           </div>
-          <button class="home-left--btn">
-            {{ t("home.connect") }}
-            <img
-              class="home-left--img"
-              src="../assets/images/icon/link.png"
-              alt=""
-            />
-          </button>
+          <arch-animation color="#121212">
+            <button class="home-left--btn">
+              {{ t("home.connect") }}
+              <img
+                class="home-left--img"
+                src="../assets/images/icon/link.png"
+                alt=""
+              />
+            </button>
+          </arch-animation>
         </div>
         <h2>{{ t("home.skills") }}</h2>
         <div class="marquee">
@@ -131,7 +132,7 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
     <section class="home-introductionBar card-pd">
       <div class="home-introductionCard">
         <IntroductionCard
-          :title="homeTitle"
+          :title="'homeTitle'"
           :narrative="t('home.homeNarrative')"
           :content="t('home.homeConnect')"
         />
@@ -140,7 +141,7 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
         <WorksDisplay :worksDisplay="worksDisplayData" />
       </div>
     </section>
-    <section><FooterChat :title="footerTitle" /></section>
+    <section><FooterChat :title="titleName" /></section>
   </div>
 </template>
 

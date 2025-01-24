@@ -70,6 +70,8 @@ const SVG_SIZE = computed(() => {
   return props.direction === "left" || props.direction === "right" ? 24 : 96;
 });
 
+const ARCH_VERTICAL_HEIGHT = 0.5;
+
 const svgViewBox = computed(() => {
   switch (props.direction) {
     case "top":
@@ -161,8 +163,8 @@ const calculateTransforms = (e: MouseEvent): Transform => {
         props.direction === "bottom"
           ? rect.height - (e.clientY - rect.top)
           : e.clientY - rect.top;
-      const threshold = rect.height * 0.5;
-      scale = Math.min(relativeY / threshold, 0.7) * 0.5 + 0.00032;
+      const threshold = rect.height * ARCH_VERTICAL_HEIGHT;
+      scale = Math.min(relativeY / threshold, 0.6) * 0.5 + 0.00032;
       break;
     }
     case "left":

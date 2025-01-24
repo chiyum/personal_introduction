@@ -1,25 +1,24 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
+import FontMoveAnimation from "@/components/font-move-animation.vue";
 
 defineProps<{
-  title: string[];
-  narrative: string[];
-  content: string[];
-  textColor: string;
+  title: string;
+  narrative: string;
+  content: string;
+  textColor?: string;
 }>();
+// introductionCard-title--text
 </script>
 
 <template>
   <div class="introductionCard">
     <h1 class="introductionCard-title">
-      <p
-        v-for="(item, index) in title"
-        :key="index"
+      <font-move-animation
+        direction="top"
+        text="bikulisita"
         class="introductionCard-title--text"
-        :style="{ color: textColor }"
-      >
-        {{ item }}
-      </p>
+      />
     </h1>
     <div class="introductionCard-narrativeBar">
       <h2 class="introductionCard-narrative" :style="{ color: textColor }">
