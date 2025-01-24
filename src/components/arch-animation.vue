@@ -50,6 +50,7 @@ interface Props {
   color?: string;
   borderRadius?: string;
   customClass?: string;
+  archHeight?: number;
 }
 
 // Props
@@ -57,7 +58,8 @@ const props = withDefaults(defineProps<Props>(), {
   width: "auto",
   height: "100%",
   direction: "bottom",
-  color: "#8b5cf6"
+  color: "#8b5cf6",
+  archHeight: 0.5
 });
 
 // Refs
@@ -70,7 +72,7 @@ const SVG_SIZE = computed(() => {
   return props.direction === "left" || props.direction === "right" ? 24 : 96;
 });
 
-const ARCH_VERTICAL_HEIGHT = 0.5;
+const ARCH_VERTICAL_HEIGHT = props.archHeight;
 
 const svgViewBox = computed(() => {
   switch (props.direction) {
@@ -163,8 +165,10 @@ const calculateTransforms = (e: MouseEvent): Transform => {
         props.direction === "bottom"
           ? rect.height - (e.clientY - rect.top)
           : e.clientY - rect.top;
+      console.log(ARCH_VERTICAL_HEIGHT, "Arch");
       const threshold = rect.height * ARCH_VERTICAL_HEIGHT;
-      scale = Math.min(relativeY / threshold, 0.6) * 0.5 + 0.00032;
+      scale =
+        Math.min(relativeY / threshold, ARCH_VERTICAL_HEIGHT) * 0.5 + 0.00032;
       break;
     }
     case "left":

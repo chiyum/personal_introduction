@@ -11,28 +11,35 @@ defineProps<{
 
 <template>
   <footer class="footerChat card-pd">
-    <div class="footerChat-container">
-      <div class="footerChat-block">
-        <h1 class="footerChat-title">
-          <p
-            v-for="(item, index) in title"
-            :key="index"
-            class="footerChat-title--text"
-          >
-            {{ item }}
-          </p>
-        </h1>
-        <div class="footerChat-linkBar">
-          <arch-animation color="var(--primary-100)" border-radius="8px">
-            <a class="footerChat-link"> {{ t("home.footerChat") }} </a>
-          </arch-animation>
+    <arch-animation
+      direction="top"
+      color="var(--dark-100)"
+      border-radius="8px"
+      :archHeight="0.1"
+    >
+      <div class="footerChat-container">
+        <div class="footerChat-block">
+          <h1 class="footerChat-title">
+            <p
+              v-for="(item, index) in title"
+              :key="index"
+              class="footerChat-title--text"
+            >
+              {{ item }}
+            </p>
+          </h1>
+          <div class="footerChat-linkBar">
+            <arch-animation color="var(--primary-100)" border-radius="8px">
+              <a class="footerChat-link"> {{ t("home.footerChat") }} </a>
+            </arch-animation>
 
-          <arch-animation color="var(--primary-100)" border-radius="8px">
-            <a class="footerChat-link"> {{ t("home.footerChatEmail") }}</a>
-          </arch-animation>
+            <arch-animation color="var(--primary-100)" border-radius="8px">
+              <a class="footerChat-link"> {{ t("home.footerChatEmail") }}</a>
+            </arch-animation>
+          </div>
         </div>
       </div>
-    </div>
+    </arch-animation>
 
     <div class="footerChat-chatBlock">
       <div class="footerChat-chatBlock--bar">
