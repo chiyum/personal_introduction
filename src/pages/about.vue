@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import IntroductionCard from "@/components/introductionCard.vue";
+import FooterChat from "@/components/footerChat.vue";
+import gameCard from "@/components/gameCard.vue";
+import getImageUrl from "@/utils/getImageUrl";
+
 import { useI18n } from "@/i18n";
 import { Vue3Marquee } from "vue3-marquee";
 import { ref } from "vue";
@@ -7,7 +11,16 @@ const { t } = useI18n();
 interface WorkItem {
   title: string;
   text: string;
+  date: string;
 }
+const spotifyEmbedUrl = [
+  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
+  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
+  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
+  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
+  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
+  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator"
+];
 
 const worksData = ref<WorkItem[]>([
   { title: "OOOXXX |", text: "XXXOOO", date: "2025" },
@@ -18,6 +31,7 @@ const worksData = ref<WorkItem[]>([
   { title: "OOOXXX |", text: "XXXOOO", date: "2025" }
 ]);
 const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
+const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
 </script>
 
 <template>
@@ -27,7 +41,7 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
         <h2 class="about-marquee--text">{{ t("home.aboutMe") }}</h2>
       </Vue3Marquee>
     </div>
-    <section class="about-bar">
+    <section class="about-bar card-pd">
       <div class="about-left">
         <div class="about-left--title">
           <p class="about-left--title__text">Hey Y'all</p>
@@ -75,7 +89,7 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
         </header-host>
       </div>
     </section>
-    <section class="about-introduce--card">
+    <section class="card-pd">
       <div class="about-introduce">
         <IntroductionCard
           :title="homeTitle"
@@ -96,7 +110,7 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
         </div>
       </div>
     </section>
-    <section>
+    <section class="card-pd">
       <div>
         <IntroductionCard
           :title="homeTitle"
@@ -104,7 +118,46 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
           :content="t('home.homeConnect')"
         />
       </div>
+      <div class="spotify">
+        <div
+          v-for="(item, index) in spotifyEmbedUrl"
+          :key="index"
+          class="spotify-block"
+        >
+          <iframe
+            class="spotify-iframe"
+            :src="item"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          >
+          </iframe>
+        </div>
+      </div>
     </section>
+    <section class="card-pd">
+      <div>
+        <IntroductionCard
+          :title="homeTitle"
+          :narrative="t('home.homeNarrative')"
+          :content="t('home.homeConnect')"
+        />
+      </div>
+      <div class="about-gameCard">
+        <gameCard
+          title="OOXX"
+          text="xxoo"
+          :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
+        />
+        <gameCard
+          title="OOXX"
+          text="xxoo"
+          :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
+          :imgWidth="'86%'"
+        />
+      </div>
+    </section>
+    <section><FooterChat :title="footerTitle" /></section>
   </div>
 </template>
 

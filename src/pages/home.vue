@@ -7,13 +7,16 @@ import { useI18n } from "@/i18n";
 import { ref } from "vue";
 import HeaderHost from "@/components/headshot.vue";
 import { Vue3Marquee } from "vue3-marquee";
+import { WorkDisplay } from "@/types/home";
 const { t } = useI18n();
 const images = ref<string[]>([
   new URL("@/assets/images/icon/link.png", import.meta.url).href,
   new URL("@/assets/images/icon/link.png", import.meta.url).href,
+  new URL("@/assets/images/icon/link.png", import.meta.url).href,
+  new URL("@/assets/images/icon/link.png", import.meta.url).href,
   new URL("@/assets/images/icon/link.png", import.meta.url).href
 ]);
-const worksDisplayData = ref<object[]>([
+const worksDisplayData = ref<WorkDisplay[]>([
   {
     img: getImageUrl("worksDisplay/worksDisplay.jpg"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
@@ -57,7 +60,7 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
 </script>
 
 <template>
-  <div class="home">
+  <div class="home card-pd">
     <div class="home-titleName">
       <p
         v-for="(item, index) in titleName"
@@ -109,18 +112,6 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
               :src="image"
               :alt="'圖片 ' + (index + 1)"
             />
-            <img
-              v-for="(image, index) in images"
-              :key="index"
-              :src="image"
-              :alt="'圖片 ' + (index + 1)"
-            />
-            <img
-              v-for="(image, index) in images"
-              :key="index"
-              :src="image"
-              :alt="'圖片 ' + (index + 1)"
-            />
           </Vue3Marquee>
         </div>
       </div>
@@ -137,7 +128,7 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
         </header-host>
       </div>
     </section>
-    <section class="home-introductionBar">
+    <section class="home-introductionBar card-pd">
       <div class="home-introductionCard">
         <IntroductionCard
           :title="homeTitle"

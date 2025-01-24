@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <footer class="footerChat">
+  <footer class="footerChat card-pd">
     <div class="footerChat-container">
       <div class="footerChat-block">
         <h1 class="footerChat-title">

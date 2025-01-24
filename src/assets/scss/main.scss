@@ -12,7 +12,12 @@ body {
   sans-serif;
   overflow-x: hidden;
 }
-
+.card-pd{
+  padding: 88px ;
+  @include desktop{
+    padding: 64px ;
+  }
+}
 .connectBtn{
 display: flex;
 z-index: 1;
@@ -40,6 +45,8 @@ background: var(--primary-100);
   display: flex;
   position: relative;
   overflow: hidden;
+  @include desktop{
+width: 100%;  }
 }
 @font-face {
   font-family: 'TradeGothicLTPro';

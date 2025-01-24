@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
+import { WorkDisplay } from "@/types/home";
 
 defineProps<{
-  worksDisplay: {
-    img: string;
-    url: string;
-    summary: string;
-    title: string;
-  }[];
+  worksDisplay: WorkDisplay[];
 }>();
 </script>
 
