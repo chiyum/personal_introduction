@@ -12,7 +12,6 @@ const images = ref<string[]>([
   new URL("@/assets/images/icon/link.png", import.meta.url).href
 ]);
 const titleName = ref(["L", "U", "N", "A"]);
-const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
 </script>
 
 <template>
@@ -98,7 +97,7 @@ const homeTitle = ref(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
     </div>
     <div class="home-introductionCard">
       <IntroductionCard
-        :title="homeTitle"
+        title="Portfolio"
         :narrative="t('introduction-card.homeNarrative')"
         :content="t('introduction-card.homeConnect')"
       />
