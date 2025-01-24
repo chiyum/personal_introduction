@@ -214,18 +214,34 @@ const updateGooeyTransform = (transforms: Transform): void => {
 };
 
 // Event handlers
+let animationFrame: number | null = null; // 用於存儲 requestAnimationFrame 的 ID
+
 const handleMouseMove = (e: MouseEvent): void => {
   if (!isHovered.value) return;
-  const transforms = calculateTransforms(e);
-  updateGooeyTransform(transforms);
-};
 
+  const transforms = calculateTransforms(e);
+
+  // 使用 requestAnimationFrame 進行平滑更新
+  if (animationFrame) {
+    cancelAnimationFrame(animationFrame);
+  }
+
+  animationFrame = requestAnimationFrame(() => {
+    updateGooeyTransform(transforms);
+  });
+};
 const handleMouseEnter = (): void => {
   isHovered.value = true;
 };
 
 const handleMouseLeave = (): void => {
   isHovered.value = false;
+
+  if (animationFrame) {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
+  }
+
   updateGooeyTransform({ x: 0, y: 0.00032 });
 };
 
@@ -251,7 +267,7 @@ onMounted(() => {
   pointer-events: none;
   will-change: transform;
   transform-style: preserve-3d;
-  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 優化動畫曲線 */
 }
 
 .nav-gooey-path {
