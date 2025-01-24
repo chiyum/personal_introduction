@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n";
 import { ref } from "vue";
 import HeaderHost from "@/components/headshot.vue";
 import { Vue3Marquee } from "vue3-marquee";
+import ArchAnimation from "@/components/arch-animation.vue";
 const { t } = useI18n();
 const images = ref<string[]>([
   new URL("@/assets/images/icon/link.png", import.meta.url).href,
@@ -49,14 +50,16 @@ const titleName = ref(["L", "U", "N", "A"]);
               Carolina
             </p>
           </div>
-          <button class="home-left--btn">
-            {{ t("home.connect") }}
-            <img
-              class="home-left--img"
-              src="../assets/images/icon/link.png"
-              alt=""
-            />
-          </button>
+          <arch-animation color="#121212">
+            <button class="home-left--btn">
+              {{ t("home.connect") }}
+              <img
+                class="home-left--img"
+                src="../assets/images/icon/link.png"
+                alt=""
+              />
+            </button>
+          </arch-animation>
         </div>
         <h2>{{ t("home.skills") }}</h2>
         <div class="marquee">
