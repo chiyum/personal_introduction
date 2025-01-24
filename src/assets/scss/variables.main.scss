@@ -14,12 +14,16 @@
     --fontConcertOne: "Concert One";
 }
 
-
+$break-point-smallTablet: 480px;
 $break-point-tablet: 760px;
 $break-point-desktop: 990px;
 $break-point-bigDesktop: 1500px;
 
-
+@mixin smallTablet {
+  @media (max-width: $break-point-smallTablet) {
+    @content;
+  }
+}
 
 @mixin tablet {
   @media (max-width: $break-point-tablet) {
