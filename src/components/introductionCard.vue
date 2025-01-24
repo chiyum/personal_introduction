@@ -5,6 +5,7 @@ defineProps<{
   title: string[];
   narrative: string[];
   content: string[];
+  textColor: string;
 }>();
 </script>
 
@@ -15,12 +16,13 @@ defineProps<{
         v-for="(item, index) in title"
         :key="index"
         class="introductionCard-title--text"
+        :style="{ color: textColor }"
       >
         {{ item }}
       </p>
     </h1>
     <div class="introductionCard-narrativeBar">
-      <h2 class="introductionCard-narrative">
+      <h2 class="introductionCard-narrative" :style="{ color: textColor }">
         {{ narrative }}
       </h2>
       <p class="introductionCard-content">

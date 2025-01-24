@@ -18,5 +18,12 @@ export default {
   worksDisplayTitleThree: "OOOXXX",
   worksDisplayTitleFour: "OOOXXX",
   worksDisplayTitleFive: "OOOXXX",
-  worksDisplayTitleSix: "OOOXXX"
+  worksDisplayTitleSix: "OOOXXX",
+  footerChatText:
+    "“Try to create. I want to tell people to create. Just start by creating your day. Then create your life.”",
+  footerChatSignature: "- Prince, The Beautiful Ones",
+  footerChatMade: "Made in Webflow | 2024",
+  footerChat: "   Let's Chat ",
+  footerChatEmail: "Email Me",
+  aboutMe: "About Me"
 };

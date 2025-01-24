@@ -159,30 +159,4 @@
   overflow: hidden;
 }
 
-.marquee__inner {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 14px;
-  animation: marquee 6s linear infinite;
-  min-width: 100%; 
-}
 
-.marquee__inner img {
-  margin-right: 32px;
-  height: auto;
-  width: auto;
-  max-height: 100px;
-  display: block;
-}
-.marquee-gradient{
-  position: absolute;
-  background-image: linear-gradient(90deg, var(--dark-100), #12121200 30%, #12121200 80%, var(--dark-100));
-  width: 100.5%;
-  inset: 0%;}
-@keyframes marquee {
-  0% {
-    transform: translateX(0);  }
-  100% {
-    transform: translateX(-100%); /* 平移到內容的一半 */
-  }
-}

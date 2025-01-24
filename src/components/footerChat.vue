@@ -24,11 +24,11 @@ defineProps<{
         </h1>
         <div class="footerChat-linkBar">
           <arch-animation color="var(--primary-100)" border-radius="8px">
-            <a class="footerChat-link">Let's Chat </a>
+            <a class="footerChat-link"> {{ t("home.footerChat") }} </a>
           </arch-animation>
 
           <arch-animation color="var(--primary-100)" border-radius="8px">
-            <a class="footerChat-link">Email Me</a>
+            <a class="footerChat-link"> {{ t("home.footerChatEmail") }}</a>
           </arch-animation>
         </div>
       </div>
@@ -36,11 +36,15 @@ defineProps<{
 
     <div class="footerChat-chatBlock">
       <div class="footerChat-chatBlock--bar">
-        <p class="footerChat-chatBlock--text">{{ t("home.jobTitle") }}</p>
-        <p class="footerChat-chatBlock--signature">{{ t("home.jobTitle") }}</p>
+        <p class="footerChat-chatBlock--text">{{ t("home.footerChatText") }}</p>
+        <p class="footerChat-chatBlock--signature">
+          {{ t("home.footerChatSignature") }}
+        </p>
       </div>
       <div class="footerChat-chatBlock--webflow">
-        <p class="footerChat-chatBlock--signature">{{ t("home.jobTitle") }}</p>
+        <p class="footerChat-chatBlock--signature">
+          {{ t("home.footerChatMade") }}
+        </p>
       </div>
     </div>
   </footer>
@@ -53,6 +57,9 @@ defineProps<{
   gap: 44px;
   padding-top: 88px;
   padding-bottom: 88px;
+  @include desktop {
+    padding: 64px 24px;
+  }
   &-block {
     display: flex;
     flex-direction: column;
@@ -71,6 +78,9 @@ defineProps<{
     background-color: var(--primary-100);
     justify-content: flex-start;
     align-items: center;
+    @include desktop {
+      padding: 24px;
+    }
   }
   &-title {
     display: flex;
@@ -104,9 +114,11 @@ defineProps<{
   &-chatBlock {
     display: flex;
     gap: 44px;
+    @include desktop {
+      flex-direction: column;
+    }
     &--bar {
       display: flex;
-      grid-column-gap: 24px;
       grid-row-gap: 24px;
       background-color: var(--dark-200);
       color: var(--low-contrast-text);
@@ -114,7 +126,6 @@ defineProps<{
       border-radius: 16px;
       flex-flow: column;
       width: 100%;
-      max-width: 500px;
       padding: 32px;
       font-size: 14px;
       font-style: italic;
