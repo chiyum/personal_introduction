@@ -8,6 +8,9 @@ const toHome = () => {
 const toAbout = () => {
   router.push("/about");
 };
+const toBlog = () => {
+  router.push("/blog");
+};
 import ArchAnimation from "@/components/arch-animation.vue";
 </script>
 
@@ -23,7 +26,7 @@ import ArchAnimation from "@/components/arch-animation.vue";
           <a class="layout-default-link" @click="toAbout">About Me</a>
         </arch-animation>
         <arch-animation color="#ffffff" border-radius="8px">
-          <a class="layout-default-link">Blog</a>
+          <a class="layout-default-link" @click="toBlog">Blog</a>
         </arch-animation>
         <arch-animation direction="top" color="#ffffff" border-radius="8px">
           <a class="layout-default-link"

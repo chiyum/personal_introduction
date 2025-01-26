@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <footer class="footerChat card-pd">
+  <footer class="footerChat">
     <arch-animation
       direction="top"
       color="var(--dark-100)"
@@ -91,7 +91,7 @@ defineProps<{
   }
   &-title {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-content: center;
     color: var(--white);
     text-transform: uppercase;
@@ -107,8 +107,12 @@ defineProps<{
   }
   &-linkBar {
     display: flex;
+    justify-content: center;
     gap: 16px;
     width: 100%;
+    @include tablet {
+      flex-direction: column;
+    }
   }
   &-link {
     padding: 16px 24px;

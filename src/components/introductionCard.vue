@@ -7,6 +7,9 @@ defineProps<{
   narrative: string;
   content: string;
   textColor?: string;
+  titleColor?: string;
+  text?: string;
+  fontSize?: string;
 }>();
 // introductionCard-title--text
 </script>
@@ -16,8 +19,9 @@ defineProps<{
     <h1 class="introductionCard-title">
       <font-move-animation
         direction="top"
-        text="bikulisita"
+        :title="title"
         class="introductionCard-title--text"
+        :style="{ color: titleColor, fontSize: fontSize }"
       />
     </h1>
     <div class="introductionCard-narrativeBar">

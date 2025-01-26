@@ -16,7 +16,7 @@ body {
 .card-pd{
   padding: 88px ;
   @include desktop{
-    padding: 64px ;
+    padding: 64px 24px ;
   }
 }
 .connectBtn{
@@ -39,7 +39,10 @@ background: var(--primary-100);
   justify-content: center;
 }
 }
-
+.connectBtnImg{
+width: 30px;
+height: 30px;
+}
 .marquee {
   width: 120%;
   padding-top: 16px;
@@ -143,8 +146,7 @@ width: 100%;  }
     padding: 8px 20px;
     border-radius: 8px;
     cursor: pointer;
-    @include tablet {
-      font-size: 4vw;    }
+    
   }
 
   &-img {
