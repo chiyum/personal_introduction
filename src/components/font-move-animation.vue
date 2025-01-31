@@ -2,7 +2,7 @@
 import { ref, onMounted, onBeforeUnmount, computed } from "vue";
 
 interface Props {
-  text: string;
+  title: string;
   direction: "top" | "bottom";
 }
 
@@ -15,9 +15,7 @@ const animationDelay = 50; // 每個字母動畫的延遲
 const animationDuration = 300; // 每個字母動畫的持續時間
 
 // 計算字母陣列
-const fontsAry = computed(() => {
-  return props.text.split("");
-});
+const fontsAry = computed(() => props.title?.split(""));
 
 // 監聽 Intersection Observer 是否觸發
 const isVisible = ref(false);

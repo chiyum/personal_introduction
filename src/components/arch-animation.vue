@@ -267,7 +267,7 @@ onMounted(() => {
   pointer-events: none;
   will-change: transform;
   transform-style: preserve-3d;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 優化動畫曲線 */
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* 優化動畫曲線 */
 }
 
 .nav-gooey-path {

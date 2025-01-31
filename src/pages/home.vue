@@ -59,7 +59,7 @@ const titleName = ref(["L", "U", "N", "A"]);
 </script>
 
 <template>
-  <div class="home card-pd">
+  <div class="home">
     <div class="home-titleName">
       <p
         v-for="(item, index) in titleName"
@@ -69,7 +69,7 @@ const titleName = ref(["L", "U", "N", "A"]);
         {{ item }}
       </p>
     </div>
-    <section class="home-bar">
+    <section class="home-bar card-pd">
       <div class="home-left">
         <div class="home-left--title">
           <p class="home-left--title__text">Hey Y'all</p>
@@ -94,10 +94,10 @@ const titleName = ref(["L", "U", "N", "A"]);
             </p>
           </div>
           <arch-animation color="#121212">
-            <button class="home-left--btn">
+            <button class="connectBtn">
               {{ t("home.connect") }}
               <img
-                class="home-left--img"
+                class="connectBtnImg"
                 src="../assets/images/icon/link.png"
                 alt=""
               />
@@ -129,7 +129,7 @@ const titleName = ref(["L", "U", "N", "A"]);
         </header-host>
       </div>
     </section>
-    <section class="home-introductionBar card-pd">
+    <section class="home-introductionBar page-container">
       <div class="home-introductionCard">
         <IntroductionCard
           :title="'homeTitle'"
