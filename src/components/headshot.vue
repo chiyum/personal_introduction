@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 
+let animationFrame: number | null = null;
 const headshot = ref<HTMLElement | null>(null);
 const content = ref<HTMLElement | null>(null);
 
@@ -20,29 +21,33 @@ const contentTransform = ref({
 const handleMouseMove = (event: MouseEvent) => {
   if (!headshot.value) return;
 
-  // 獲取元素的位置和尺寸
-  const rect = headshot.value.getBoundingClientRect();
+  // 如果已經有待執行的動畫，先取消它
+  if (animationFrame) {
+    cancelAnimationFrame(animationFrame);
+  }
 
-  // 計算滑鼠在元素內的相對位置 (0-1)
-  const x = (event.clientX - rect.left) / rect.width;
-  const y = (event.clientY - rect.top) / rect.height;
+  // 使用 requestAnimationFrame 進行平滑更新
+  animationFrame = requestAnimationFrame(() => {
+    // 獲取元素的位置和尺寸
+    const rect = headshot.value!.getBoundingClientRect();
 
-  // 計算headshot的旋轉角度
-  // x: 0 -> -30deg, 1 -> 30deg
-  // y: 0 -> -10deg, 1 -> 10deg
-  headshotTransform.value = {
-    rotateX: (y - 0.5) * -20, // -10 to 10
-    rotateY: (x - 0.5) * 60, // -30 to 30
-    rotateZ: (x - 0.5) * 2 // -1 to 1
-  };
+    // 計算滑鼠在元素內的相對位置 (0-1)
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
 
-  // 計算content的位移
-  // x: -50% to 50%
-  // y: -12% to 12%
-  contentTransform.value = {
-    translateX: (x - 0.5) * 100, // -50% to 50%
-    translateY: (y - 0.5) * 24 // -12% to 12%
-  };
+    // 計算headshot的旋轉角度
+    headshotTransform.value = {
+      rotateX: (y - 0.5) * -20, // -10 to 10
+      rotateY: (x - 0.5) * 60, // -30 to 30
+      rotateZ: (x - 0.5) * 2 // -1 to 1
+    };
+
+    // 計算content的位移
+    contentTransform.value = {
+      translateX: (x - 0.5) * 100, // -50% to 50%
+      translateY: (y - 0.5) * 24 // -12% to 12%
+    };
+  });
 };
 
 // 重置transform值
@@ -69,6 +74,11 @@ onUnmounted(() => {
   if (headshot.value) {
     headshot.value.removeEventListener("mousemove", handleMouseMove);
     headshot.value.removeEventListener("mouseleave", handleMouseLeave);
+  }
+
+  // 清理待執行的動畫
+  if (animationFrame) {
+    cancelAnimationFrame(animationFrame);
   }
 });
 </script>
