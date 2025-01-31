@@ -2,7 +2,7 @@
 import { ref, onMounted, onBeforeUnmount, computed } from "vue";
 
 interface Props {
-  text: string;
+  title: string;
   direction: "top" | "bottom";
 }
 
@@ -15,17 +15,30 @@ const animationDelay = 50; // 每個字母動畫的延遲
 const animationDuration = 300; // 每個字母動畫的持續時間
 
 // 計算字母陣列
-const fontsAry = computed(() => {
-  return props.text.split("");
-});
+const fontsAry = computed(() => props.title?.split(""));
 
 // 監聽 Intersection Observer 是否觸發
 const isVisible = ref(false);
 let observer: IntersectionObserver | null = null; // 用來存儲 Intersection Observer 實例
 
+const generateRandomId = (length: number = 8): string => {
+  // 定義可用的字元集合，包括大小寫字母與數字
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = ""; // 初始化結果字串
+  for (let i = 0; i < length; i++) {
+    // 隨機選取一個字元並追加到結果字串
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters[randomIndex];
+  }
+  return result; // 返回生成的字串
+};
+
+const elementId = generateRandomId();
+
 // 定義觀察目標並處理可見性
 const observeFontWrap = () => {
-  const target = document.querySelector(".font-wrap"); // 獲取 font-wrap 元素
+  const target = document.getElementById(`${elementId}`); // 獲取 font-wrap 元素
   if (!target) return;
 
   observer = new IntersectionObserver(
@@ -64,7 +77,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="font-wrap" :class="{ visible: isVisible }">
+  <div class="font-wrap" :id="elementId" :class="{ visible: isVisible }">
     <span
       class="font-item"
       v-for="(font, index) in fontsAry"

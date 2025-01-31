@@ -21,37 +21,37 @@ const worksDisplayData = ref<WorkDisplay[]>([
   {
     img: getImageUrl("worksDisplay/worksDisplay.jpg"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: t("home.worksDisplaySummaryOne"),
+    summary: "XXXOOO",
     title: "OOOXXX"
   },
   {
     img: getImageUrl("worksDisplay/worksDisplay.jpg"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: t("home.worksDisplaySummaryTwo"),
+    summary: "XXXOOO",
     title: "OOOXXX"
   },
   {
     img: getImageUrl("worksDisplay/worksDisplay.jpg"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: t("home.worksDisplaySummaryThree"),
+    summary: "XXXOOO",
     title: "OOOXXX"
   },
   {
     img: getImageUrl("worksDisplay/worksDisplay.jpg"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: t("home.worksDisplaySummaryFour"),
+    summary: "XXXOOO",
     title: "OOOXXX"
   },
   {
     img: getImageUrl("worksDisplay/worksDisplay.jpg"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: t("home.worksDisplaySummaryFive"),
+    summary: "XXXOOO",
     title: "OOOXXX"
   },
   {
     img: getImageUrl("worksDisplay/worksDisplay.jpg"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: t("home.worksDisplaySummarySix"),
+    summary: "XXXOOO",
     title: "OOOXXX"
   }
 ]);
@@ -59,7 +59,7 @@ const titleName = ref(["L", "U", "N", "A"]);
 </script>
 
 <template>
-  <div class="home card-pd">
+  <div class="home">
     <div class="home-titleName">
       <p
         v-for="(item, index) in titleName"
@@ -69,35 +69,36 @@ const titleName = ref(["L", "U", "N", "A"]);
         {{ item }}
       </p>
     </div>
-    <section class="home-bar">
+    <section class="home-bar card-pd">
       <div class="home-left">
         <div class="home-left--title">
           <p class="home-left--title__text">Hey Y'all</p>
           <p class="home-left--title__symbol">*</p>
-          <p class="home-left--title__text">I'm {{ t("home.name") }}</p>
+          <p class="home-left--title__text">{{ t("home.helloTitle") }}</p>
         </div>
         <div class="home-left--introduce">
           <div class="home-left--introduce__bar">
             <p class="home-left--introduce__text">
-              I'm a
+              {{ t("home.im") }}
               <span class="home-left--introduce__bright">{{
                 t("home.jobTitle")
               }}</span>
-              that's ready to help you make the experiences you've been missing!
+              {{ t("home.openingText") }}
             </p>
             <p class="home-left--introduce__text">
-              UX Designer at <a href="#">Pendo.io</a>
+              {{ t("home.jobTitleAt") }}
+              <a href="#"> {{ t("home.company") }}</a>
             </p>
             <p class="home-left--introduce__text">
-              <span class="home-left--title__symbol">* </span>Based in North
-              Carolina
+              <span class="home-left--title__symbol">* </span>
+              {{ t("home.workLocation") }}
             </p>
           </div>
           <arch-animation color="#121212">
-            <button class="home-left--btn">
-              {{ t("home.connect") }}
+            <button class="connectBtn">
+              {{ t("home.button") }}
               <img
-                class="home-left--img"
+                class="connectBtnImg"
                 src="../assets/images/icon/link.png"
                 alt=""
               />
@@ -129,12 +130,12 @@ const titleName = ref(["L", "U", "N", "A"]);
         </header-host>
       </div>
     </section>
-    <section class="home-introductionBar card-pd">
+    <section class="home-introductionBar page-container">
       <div class="home-introductionCard">
         <IntroductionCard
-          :title="'homeTitle'"
-          :narrative="t('home.homeNarrative')"
-          :content="t('home.homeConnect')"
+          :title="t('global.portfolio')"
+          :narrative="t('home.narrative')"
+          :content="t('home.connect')"
         />
       </div>
       <div class="home-worksDisplay">
