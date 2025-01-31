@@ -40,7 +40,7 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
         <h2 class="about-marquee--text">{{ t("home.aboutMe") }}</h2>
       </Vue3Marquee>
     </div>
-    <section class="about-bar card-pd">
+    <section class="about-bar page-container">
       <div class="about-left">
         <div class="about-left--title">
           <p class="about-left--title__text">Hey Y'all</p>

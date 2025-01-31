@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <footer class="footerChat">
+  <footer class="footerChat page-container">
     <arch-animation
       direction="top"
       color="var(--dark-100)"

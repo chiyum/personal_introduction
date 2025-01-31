@@ -41,7 +41,7 @@ const { t } = useI18n();
       :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
     />
   </section>
-  <section class="card-pd"><FooterChat :title="footerTitle" /></section>
+  <section><FooterChat :title="footerTitle" /></section>
 </template>
 
 <style scoped lang="scss">

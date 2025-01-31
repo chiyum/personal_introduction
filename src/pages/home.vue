@@ -129,7 +129,7 @@ const titleName = ref(["L", "U", "N", "A"]);
         </header-host>
       </div>
     </section>
-    <section class="home-introductionBar card-pd">
+    <section class="home-introductionBar page-container">
       <div class="home-introductionCard">
         <IntroductionCard
           :title="'homeTitle'"
