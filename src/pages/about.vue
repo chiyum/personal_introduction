@@ -30,7 +30,6 @@ const worksData = ref<WorkItem[]>([
   { title: "OOOXXX |", text: "XXXOOO", date: "2025" },
   { title: "OOOXXX |", text: "XXXOOO", date: "2025" }
 ]);
-const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
 </script>
 
 <template>
@@ -43,29 +42,20 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
     <section class="about-bar page-container">
       <div class="about-left">
         <div class="about-left--title">
-          <p class="about-left--title__text">Hey Y'all</p>
-          <p class="about-left--title__symbol">*</p>
-          <p class="about-left--title__text">I'm {{ t("home.name") }}</p>
+          <p class="about-left--title__text">{{ t("about.helloTitle") }}</p>
         </div>
         <div class="about-left--introduce">
           <div class="about-left--introduce__bar">
             <p class="about-left--introduce__text">
-              I'm a
+              {{ t("about.im") }}
               <span class="about-left--introduce__bright">{{
-                t("home.jobTitle")
+                t("about.jobTitle")
               }}</span>
-              that's ready to help you make the experiences you've been missing!
-            </p>
-            <p class="about-left--introduce__text">
-              UX Designer at <a href="#">Pendo.io</a>
-            </p>
-            <p class="about-left--introduce__text">
-              <span class="about-left--title__symbol">* </span>Based in North
-              Carolina
+              {{ t("about.openingText") }}
             </p>
           </div>
           <button class="connectBtn">
-            {{ t("home.connect") }}
+            {{ t("about.button") }}
             <img
               class="about-left--img"
               src="../assets/images/icon/link.png"
@@ -73,7 +63,6 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
             />
           </button>
         </div>
-        <h2>{{ t("home.skills") }}</h2>
       </div>
       <div class="about-right">
         <header-host>
@@ -91,9 +80,9 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
     <section class="card-pd">
       <div class="about-introduce">
         <IntroductionCard
-          :title="'Hello'"
-          :narrative="t('home.homeNarrative')"
-          :content="t('home.homeConnect')"
+          :title="t('about.introductionCard.title')"
+          :narrative="t('about.introductionCard.narrative')"
+          :content="t('about.introductionCard.connect')"
           :textColor="'black'"
         />
         <div
@@ -112,9 +101,9 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
     <section class="card-pd">
       <div>
         <IntroductionCard
-          :title="'Hello'"
-          :narrative="t('home.homeNarrative')"
-          :content="t('home.homeConnect')"
+          :title="t('about.introductionCard.title.music')"
+          :narrative="t('about.introductionCard.narrative.music')"
+          :content="t('about.introductionCard.connect.music')"
         />
       </div>
       <div class="spotify">
@@ -138,8 +127,8 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
       <div>
         <IntroductionCard
           :title="'Hello'"
-          :narrative="t('home.homeNarrative')"
-          :content="t('home.homeConnect')"
+          :narrative="t('about.introductionCard.narrative.game')"
+          :content="t('about.introductionCard.connect.game')"
         />
       </div>
       <div class="about-gameCard">
@@ -152,11 +141,11 @@ const footerTitle = ref(["L", "e", "t", "'s", " ", "C", "h", "a", "t"]);
           title="OOXX"
           text="xxoo"
           :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
-          :imgWidth="'86%'"
+          :imgWidth="'70%'"
         />
       </div>
     </section>
-    <section><FooterChat :title="footerTitle" /></section>
+    <section><FooterChat :title="'Helllo'" /></section>
   </div>
 </template>
 

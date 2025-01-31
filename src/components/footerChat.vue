@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ArchAnimation from "@/components/arch-animation.vue";
-
 import { useI18n } from "@/i18n";
 const { t } = useI18n();
 
@@ -30,11 +29,11 @@ defineProps<{
           </h1>
           <div class="footerChat-linkBar">
             <arch-animation color="var(--primary-100)" border-radius="8px">
-              <a class="footerChat-link"> {{ t("home.footerChat") }} </a>
+              <a class="footerChat-link"> {{ t("footer.chat") }} </a>
             </arch-animation>
 
             <arch-animation color="var(--primary-100)" border-radius="8px">
-              <a class="footerChat-link"> {{ t("home.footerChatEmail") }}</a>
+              <a class="footerChat-link"> {{ t("footer.email") }}</a>
             </arch-animation>
           </div>
         </div>
@@ -43,14 +42,16 @@ defineProps<{
 
     <div class="footerChat-chatBlock">
       <div class="footerChat-chatBlock--bar">
-        <p class="footerChat-chatBlock--text">{{ t("home.footerChatText") }}</p>
+        <p class="footerChat-chatBlock--text">
+          {{ t("footer.text") }}
+        </p>
         <p class="footerChat-chatBlock--signature">
-          {{ t("home.footerChatSignature") }}
+          {{ t("footer.signature") }}
         </p>
       </div>
       <div class="footerChat-chatBlock--webflow">
         <p class="footerChat-chatBlock--signature">
-          {{ t("home.footerChatMade") }}
+          {{ t("footer.made") }}
         </p>
       </div>
     </div>
