@@ -28,12 +28,13 @@ const handleMouseMove = (event: MouseEvent) => {
 
   // 使用 requestAnimationFrame 進行平滑更新
   animationFrame = requestAnimationFrame(() => {
-    // 獲取元素的位置和尺寸
-    const rect = headshot.value!.getBoundingClientRect();
+    // 使用 clientHeight（不包含滾動條的高度）
+    const viewportWidth = document.documentElement.clientWidth;
+    const viewportHeight = document.documentElement.clientHeight;
 
     // 計算滑鼠在元素內的相對位置 (0-1)
-    const x = (event.clientX - rect.left) / rect.width;
-    const y = (event.clientY - rect.top) / rect.height;
+    const x = event.clientX / viewportWidth;
+    const y = event.clientY / viewportHeight;
 
     // 計算headshot的旋轉角度
     headshotTransform.value = {
@@ -64,17 +65,13 @@ const handleMouseLeave = () => {
 };
 
 onMounted(() => {
-  if (headshot.value) {
-    headshot.value.addEventListener("mousemove", handleMouseMove);
-    headshot.value.addEventListener("mouseleave", handleMouseLeave);
-  }
+  window.addEventListener("mousemove", handleMouseMove);
+  window.addEventListener("mouseleave", handleMouseLeave);
 });
 
 onUnmounted(() => {
-  if (headshot.value) {
-    headshot.value.removeEventListener("mousemove", handleMouseMove);
-    headshot.value.removeEventListener("mouseleave", handleMouseLeave);
-  }
+  window.removeEventListener("mousemove", handleMouseMove);
+  window.removeEventListener("mouseleave", handleMouseLeave);
 
   // 清理待執行的動畫
   if (animationFrame) {
