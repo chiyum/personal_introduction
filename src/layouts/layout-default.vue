@@ -8,9 +8,6 @@ const showOptionFields = () => {
   isOptionFields.value = true;
   console.log("666666", isOptionFields.value);
 };
-const closeOptionFields = (value: boolean) => {
-  isOptionFields.value = value;
-};
 const toHome = () => {
   router.push("/home");
 };
@@ -24,10 +21,7 @@ const toBlog = () => {
 
 <template>
   <div class="layout-default">
-    <optionFields
-      v-if="isOptionFields"
-      @close="closeOptionFields"
-    ></optionFields>
+    <optionFields v-model="isOptionFields"></optionFields>
     <div class="layout-default-head">
       <a class="layout-default-head-frontPage" @click="toHome">a</a>
       <div class="layout-default-linkBar">
@@ -60,9 +54,18 @@ const toBlog = () => {
             alt=""
           />
         </a>
-        <a class="layout-default-link connectLink" @click="showOptionFields"
+        <a
+          class="layout-default-link connectLink"
+          @click.prevent="showOptionFields"
           >⋯</a
         >
+        <teleport to="body" v-if="isOptionFields">
+          <a
+            class="layout-default-link connectLink layout-default-link--fixed"
+            @click.prevent="isOptionFields = false"
+            >⋯</a
+          >
+        </teleport>
       </div>
     </div>
     <div class="layout-default-suspension">

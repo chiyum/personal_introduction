@@ -7,19 +7,24 @@ import getImageUrl from "@/utils/getImageUrl";
 import { useI18n } from "@/i18n";
 import { Vue3Marquee } from "vue3-marquee";
 import { ref } from "vue";
+import SpotifyIframe from "@/components/spotify-iframe.vue";
+import { spotifyEmbed } from "@/types/global";
 const { t } = useI18n();
 interface WorkItem {
   title: string;
   text: string;
   date: string;
 }
-const spotifyEmbedUrl = [
-  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
-  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
-  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
-  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
-  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator",
-  "https://open.spotify.com/embed/track/2LwsunYgfRoqyIsNtgOCQx?utm_source=generator"
+
+const spotifyEmbeds: spotifyEmbed[] = [
+  {
+    uri: "track/6oilrypHWm0iylwgX6ujQc",
+    theme: "dark"
+  },
+  {
+    uri: "episode/7makk4oTQel546B0PZlDM5",
+    theme: "dark"
+  }
 ];
 
 const worksData = ref<WorkItem[]>([
@@ -110,20 +115,27 @@ const worksData = ref<WorkItem[]>([
         />
       </div>
       <div class="spotify">
-        <div
-          v-for="(item, index) in spotifyEmbedUrl"
-          :key="index"
+        <spotify-iframe
+          v-for="({ uri, theme }, index) in spotifyEmbeds"
+          :key="`${index}-${uri}`"
+          :song-url="uri"
+          :theme="theme"
           class="spotify-block"
-        >
-          <iframe
-            class="spotify-iframe"
-            :src="item"
-            frameborder="0"
-            allowfullscreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          >
-          </iframe>
-        </div>
+        ></spotify-iframe>
+        <!--        <div-->
+        <!--          v-for="(item, index) in spotifyEmbedUrl"-->
+        <!--          :key="index"-->
+        <!--          class="spotify-block"-->
+        <!--        >-->
+        <!--          <iframe-->
+        <!--            class="spotify-iframe"-->
+        <!--            :src="item"-->
+        <!--            frameborder="0"-->
+        <!--            allowfullscreen-->
+        <!--            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"-->
+        <!--          >-->
+        <!--          </iframe>-->
+        <!--        </div>-->
       </div>
     </section>
     <section class="card-pd">

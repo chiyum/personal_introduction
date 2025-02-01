@@ -160,7 +160,12 @@ width: 100%;  }
     padding: 8px 20px;
     border-radius: 8px;
     cursor: pointer;
-    
+    &--fixed {
+      position: fixed;
+      top: 40px;
+      right: 20px;
+      z-index: 6000;
+    }
   }
 
   &-img {
