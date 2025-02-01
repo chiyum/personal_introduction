@@ -4,91 +4,123 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include desktop{
+  @include desktop {
     padding-left: 0;
-    padding-right: 0;  }
-  &-titleName{
+    padding-right: 0;
+  }
+
+  &-titleName {
     display: none;
     justify-content: center;
     align-items: center;
     padding: 0 10px;
-    @include desktop{
-    display: flex;
-    padding: 60px 10px 10px;
+    @include desktop {
+      display: flex;
+      padding: 60px 10px 10px;
     }
-    &--name{
-    color: var(--white);
-    font-family:  var(--fontConcertOne);
-    font-size: 28vw;}}
+
+    &--name {
+      color: var(--white);
+      font-family: var(--fontConcertOne);
+      font-size: 28vw;
+    }
+  }
 
   &-bar {
     display: grid;
     grid-template-columns: 50% 50%;
     padding-top: 90px;
-    @include desktop{
+    @include desktop {
       display: flex;
-      padding:90px 24px ;
+      padding: 90px 24px;
     }
   }
-  &-left{
+
+  &-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     min-height: 87vh;
-    @include desktop{
-    justify-content: start;
-    min-height: 70vh;
-
-  }
-    &--title{
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    align-items: center;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    font-family:  var(--fontConcertOne);
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1;
-    @include desktop{
-      font-size: 10vw;
-      justify-content: center;
+    @include desktop {
+      justify-content: start;
+      min-height: 70vh;
 
     }
-      &__text{color: var(--white);}
-      &__symbol{color: var(--primary-200);}
+
+    &--title {
+      display: flex;
+      justify-content: start;
+      flex-wrap: wrap;
+      align-items: center;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      font-family: var(--fontConcertOne);
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1;
+
+      &__text {
+        color: var(--white);
+      }
+
+      &__symbol {
+        color: var(--primary-200);
+        transform: scale(0.8) translate(-20%, -20%) rotate(-45deg);
+      }
     }
-    &--introduce{
-      display: flex ;
+
+    &--title--desktop {
+      @include desktop {
+        font-size: 5vw;
+      }
+    }
+
+    &--title--mobile {
+      display: none;
+      @include desktop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        font-size: 20vw;
+      }
+    }
+
+    &--introduce {
+      display: flex;
       flex-direction: column;
       align-items: self-start;
       gap: 40px;
       padding-top: 24px;
       padding-bottom: 40px;
-      @include desktop{
+      @include desktop {
+        padding-top: 0;
         gap: 34px;
-        width:100%;
+        width: 100%;
 
       }
 
-      &__text{
+      &__text {
         color: var(--dark-500);
         font-size: 18px;
       }
-      &__bright{
-        color: var(    --white);
+
+      &__bright {
+        color: var(--white);
       }
     }
-   
-  
-  h2{color: var(--white);
-    letter-spacing: .5px;
-    font-size: 32px;
-    font-family:  var(--fontConcertOne);
-    font-style: italic;
-    line-height: 1.1;}
+
+
+    h2 {
+      color: var(--white);
+      letter-spacing: .5px;
+      font-size: 32px;
+      font-family: var(--fontConcertOne);
+      font-style: italic;
+      line-height: 1.1;
+    }
   }
 
   &-right {
@@ -97,13 +129,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include desktop{
+    @include desktop {
       position: absolute;
-      bottom:310px;
+      top: -8%;
       right: 0;
       width: 100%;
       height: 60%;
     }
+
     .headshot {
       position: absolute;
       width: 120%;
@@ -113,39 +146,43 @@
     &--img {
       width: 20vw;
       //height: 80%;
-      @include desktop{
+      @include desktop {
         width: 14vw;
       }
     }
   }
-  &-introductionBar{
+
+  &-introductionBar {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    @include desktop{
-      padding:  24px;}
-}
-&-worksDisplay{
-  grid-column-gap: 44px;
-  grid-row-gap: 64px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  padding: 0;
-  display: grid;
-  transform: perspective(600px);
-  @include desktop{
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr;
-    grid-row-gap: 32px;
-
-  }
-  &-introductionCard{
-    
-    @include desktop{
-      padding: 0 24px;
+    @include desktop {
+      padding: 24px;
     }
   }
-}
+
+  &-worksDisplay {
+    grid-column-gap: 44px;
+    grid-row-gap: 64px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    padding: 0;
+    display: grid;
+    transform: perspective(600px);
+    @include desktop {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: 1fr;
+      grid-row-gap: 32px;
+
+    }
+
+    &-introductionCard {
+
+      @include desktop {
+        padding: 0 24px;
+      }
+    }
+  }
 }
 

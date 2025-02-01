@@ -8,13 +8,15 @@ import HeaderHost from "@/components/headshot.vue";
 import { Vue3Marquee } from "vue3-marquee";
 import { WorkDisplay } from "@/types/home";
 import ArchAnimation from "@/components/arch-animation.vue";
+import FontMoveAnimation from "@/components/font-move-animation.vue";
 const { t } = useI18n();
 const images = ref<string[]>([
   new URL("@/assets/images/icon/vue.png", import.meta.url).href,
   new URL("@/assets/images/icon/react.png", import.meta.url).href,
   new URL("@/assets/images/icon/js.png", import.meta.url).href,
   new URL("@/assets/images/icon/css.png", import.meta.url).href,
-  new URL("@/assets/images/icon/html.png", import.meta.url).href
+  new URL("@/assets/images/icon/html.png", import.meta.url).href,
+  new URL("@/assets/images/icon/typescript.png", import.meta.url).href
 ]);
 const worksDisplayData = ref<WorkDisplay[]>([
   {
@@ -48,7 +50,23 @@ const worksDisplayData = ref<WorkDisplay[]>([
   <div class="home">
     <section class="home-bar card-pd">
       <div class="home-left">
-        <div class="home-left--title">
+        <div class="home-left--title home-left--title--mobile">
+          <p class="home-left--title__text">
+            <font-move-animation
+              :title="t('home.header.title2')"
+              direction="top"
+              title-color="#ffffff"
+            />
+          </p>
+          <p class="home-left--title__text">
+            <font-move-animation
+              :title="t('home.header.title')"
+              direction="top"
+              title-color="#ffffff"
+            />
+          </p>
+        </div>
+        <div class="home-left--title home-left--title--desktop">
           <p class="home-left--title__text">{{ t("home.hello") }}</p>
           <p class="home-left--title__symbol">*</p>
           <p class="home-left--title__text">{{ t("home.helloTitle") }}</p>
@@ -85,7 +103,7 @@ const worksDisplayData = ref<WorkDisplay[]>([
           </arch-animation>
         </div>
         <h2>{{ t("home.skills") }}</h2>
-        <div class="marquee">
+        <div class="home-marquee">
           <Vue3Marquee>
             <img
               v-for="(image, index) in images"
