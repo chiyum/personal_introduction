@@ -12,5 +12,7 @@ export default {
   name: "Luna",
   skills: "擁有的技能",
   narrative: "來看看我的作品吧！",
-  connect: "運用所學的知識,打造出能與使用者互動的網頁作品！"
+  connect: "運用所學的知識,打造出能與使用者互動的網頁作品！",
+  "header.title": "SU",
+  "header.title2": "LUNA"
 };
