@@ -15,8 +15,7 @@
     }
   }
   &-bar {
-    display: grid;
-    grid-template-columns: 50% 50%;
+  
     margin-top: 36px;
     @include desktop {
       grid-template-columns: 100%;
@@ -42,7 +41,7 @@
       font-weight: 700;
       line-height: 1;
       @include desktop {
-        font-size: 10vw;
+        font-size: 6vw;
       }
       &__text {
         color: var(--white);
@@ -156,6 +155,10 @@
   }
   &-marquee {
     padding-top: 4%;
+    @include desktop{
+      padding-top: 0;
+      padding-bottom: 4%;
+    }
     &--text {
       color: var(--dark-500);
       font-family: var(--fontConcertOne);
@@ -164,8 +167,6 @@
       font-weight: 700;
       @include desktop{
         font-size: 10vw;
-
-
       }
     }
   }
@@ -176,6 +177,7 @@
     gap: 16px;
     @include desktop {
       flex-direction: column;
+      gap: 6vw;
 
     }
   }
@@ -188,12 +190,5 @@
   flex-wrap: wrap;
   gap: 40px;
   padding: 20px 0;
-  // &-block {
-  //   width: 40%;
-  // }
-  // &-iframe {
-  //   border-radius: 12px;
-  //   width: 100%;
-  //   height: 80px;
-  // }
+
 }
