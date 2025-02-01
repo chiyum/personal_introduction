@@ -1,3 +1,6 @@
 export default {
-  hello: "Hello, World!"
+  portfolio: "Portfolio",
+  about: "About",
+  blog: "Blog",
+  linkedin: "Linkedin"
 };
