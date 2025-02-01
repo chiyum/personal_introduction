@@ -11,11 +11,11 @@ import { WorkDisplay } from "@/types/home";
 import ArchAnimation from "@/components/arch-animation.vue";
 const { t } = useI18n();
 const images = ref<string[]>([
-  new URL("@/assets/images/icon/link.png", import.meta.url).href,
-  new URL("@/assets/images/icon/link.png", import.meta.url).href,
-  new URL("@/assets/images/icon/link.png", import.meta.url).href,
-  new URL("@/assets/images/icon/link.png", import.meta.url).href,
-  new URL("@/assets/images/icon/link.png", import.meta.url).href
+  new URL("@/assets/images/icon/vue.png", import.meta.url).href,
+  new URL("@/assets/images/icon/react.png", import.meta.url).href,
+  new URL("@/assets/images/icon/js.png", import.meta.url).href,
+  new URL("@/assets/images/icon/css.png", import.meta.url).href,
+  new URL("@/assets/images/icon/html.png", import.meta.url).href
 ]);
 const worksDisplayData = ref<WorkDisplay[]>([
   {
@@ -55,24 +55,14 @@ const worksDisplayData = ref<WorkDisplay[]>([
     title: "OOOXXX"
   }
 ]);
-const titleName = ref(["L", "U", "N", "A"]);
 </script>
 
 <template>
   <div class="home">
-    <div class="home-titleName">
-      <p
-        v-for="(item, index) in titleName"
-        :key="index"
-        class="home-titleName--name"
-      >
-        {{ item }}
-      </p>
-    </div>
     <section class="home-bar card-pd">
       <div class="home-left">
         <div class="home-left--title">
-          <p class="home-left--title__text">Hey Y'all</p>
+          <p class="home-left--title__text">{{ t("home.hello") }}</p>
           <p class="home-left--title__symbol">*</p>
           <p class="home-left--title__text">{{ t("home.helloTitle") }}</p>
         </div>
@@ -142,7 +132,7 @@ const titleName = ref(["L", "U", "N", "A"]);
         <WorksDisplay :worksDisplay="worksDisplayData" />
       </div>
     </section>
-    <section><FooterChat :title="titleName" /></section>
+    <section><FooterChat :title="'Hello'" /></section>
   </div>
 </template>
 

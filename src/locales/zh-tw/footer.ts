@@ -1,8 +1,8 @@
 export default {
-  text: "“Try to create. I want to tell people to create. Just start by creating your day. Then create your life.”",
-  signature: "- Prince, The Beautiful Ones",
-  made: "Made in Webflow | 2024",
-  chat: "   Let's Chat ",
-  email: "Email Me",
-  aboutMe: "About Me"
+  text: "「走得多慢都無所謂，只要你不停下腳步。」",
+  signature: "-—安迪．沃荷",
+  made: "由Luna製作 | 2025",
+  chat: "來聊聊吧",
+  email: "寄信給我",
+  aboutMe: "關於我"
 };

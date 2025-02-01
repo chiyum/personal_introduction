@@ -4,6 +4,7 @@ import { ref, onMounted, onBeforeUnmount, computed } from "vue";
 interface Props {
   title: string;
   direction: "top" | "bottom";
+  titleColor: string;
 }
 
 // 預設參數
@@ -83,7 +84,7 @@ onBeforeUnmount(() => {
       v-for="(font, index) in fontsAry"
       :key="`${index}-${font}`"
       :class="`font-item-${direction}`"
-      :style="`--animation-delay:${index * animationDelay}ms; --animate-duration: ${animationDuration}ms;`"
+      :style="`--animation-delay:${index * animationDelay}ms; --animate-duration: ${animationDuration}ms; color: ${titleColor};`"
     >
       {{ font }}
     </span>

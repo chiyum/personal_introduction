@@ -7,6 +7,7 @@ defineProps<{
   narrative: string;
   content: string;
   textColor?: string;
+  contentColor?: string;
   titleColor?: string;
   text?: string;
   fontSize?: string;
@@ -21,14 +22,14 @@ defineProps<{
         direction="top"
         :title="title"
         class="introductionCard-title--text"
-        :style="{ color: titleColor, fontSize: fontSize }"
+        :titleColor="titleColor"
       />
     </h1>
     <div class="introductionCard-narrativeBar">
       <h2 class="introductionCard-narrative" :style="{ color: textColor }">
         {{ narrative }}
       </h2>
-      <p class="introductionCard-content">
+      <p class="introductionCard-content" :style="{ color: contentColor }">
         {{ content }}
       </p>
     </div>
@@ -37,6 +38,9 @@ defineProps<{
 
 <style scoped lang="scss">
 .introductionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   &-title {
     display: flex;
     justify-content: start;
@@ -61,7 +65,7 @@ defineProps<{
     gap: 16px;
     width: 500px;
     @include desktop {
-      width: 62vw;
+      width: 100%;
     }
   }
   &-narrative {
@@ -71,9 +75,6 @@ defineProps<{
     font-size: 32px;
     font-style: italic;
     line-height: 1.1;
-    @include desktop {
-      font-size: 4vw;
-    }
   }
   &-content {
     color: var(--low-contrast-text);
@@ -81,9 +82,6 @@ defineProps<{
     font-size: 18px;
     font-weight: 500;
     line-height: 1.5;
-    @include desktop {
-      font-size: 2vw;
-    }
   }
 }
 </style>

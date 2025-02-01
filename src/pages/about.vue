@@ -34,9 +34,10 @@ const worksData = ref<WorkItem[]>([
 
 <template>
   <div class="about">
+    <img class="about-avatar" src="@/assets/images/avatar.jpg" alt="" />
     <div class="about-marquee">
       <Vue3Marquee>
-        <h2 class="about-marquee--text">{{ t("home.aboutMe") }}</h2>
+        <h2 class="about-marquee--text">{{ t("about.about") }}</h2>
       </Vue3Marquee>
     </div>
     <section class="about-bar page-container">
@@ -83,7 +84,9 @@ const worksData = ref<WorkItem[]>([
           :title="t('about.introductionCard.title')"
           :narrative="t('about.introductionCard.narrative')"
           :content="t('about.introductionCard.connect')"
+          :titleColor="'black'"
           :textColor="'black'"
+          :contentColor="'black'"
         />
         <div
           class="about-introduce--block"
@@ -126,7 +129,7 @@ const worksData = ref<WorkItem[]>([
     <section class="card-pd">
       <div>
         <IntroductionCard
-          :title="'Hello'"
+          :title="'Hellooooooo'"
           :narrative="t('about.introductionCard.narrative.game')"
           :content="t('about.introductionCard.connect.game')"
         />
@@ -145,7 +148,7 @@ const worksData = ref<WorkItem[]>([
         />
       </div>
     </section>
-    <section><FooterChat :title="'Helllo'" /></section>
+    <section><FooterChat :title="'Hello'" /></section>
   </div>
 </template>
 

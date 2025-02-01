@@ -5,7 +5,7 @@ defineProps<{
   title: string;
   text: string;
   img: string;
-  imgWidth: string;
+  imgWidth?: string;
 }>();
 </script>
 

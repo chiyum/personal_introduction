@@ -7,7 +7,6 @@ import getImageUrl from "@/utils/getImageUrl";
 import { useI18n } from "@/i18n";
 
 // import ArchAnimation from "@/components/arch-animation.vue";
-const footerTitle = ref(["L", "e", "t", "'s"]);
 
 const { t } = useI18n();
 </script>
@@ -16,32 +15,32 @@ const { t } = useI18n();
   <section class="card-pd">
     <introductionCard
       :title="'Hello'"
-      :narrative="t('home.homeNarrative')"
-      :content="t('home.homeConnect')"
+      :narrative="t('blog.narrative')"
+      :content="t('blog.connect')"
       :fontSize="'20vw'"
     />
     <button class="connectBtn">
-      {{ t("home.connect") }}
+      {{ t("blog.button") }}
       <img class="connectBtnImg" src="../assets/images/icon/link.png" alt="" />
     </button>
   </section>
   <section class="blog-contentCard">
     <ContentCard
-      :title="t('content-card.title')"
-      :content="t('content-card.content')"
-      :text="t('content-card.text')"
-      :date="t('content-card.date')"
+      :title="t('content-card.title.one')"
+      :content="t('content-card.content.one')"
+      :text="t('content-card.text.one')"
+      :date="t('content-card.date.one')"
       :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
     />
     <ContentCard
-      :title="t('content-card.title')"
-      :content="t('content-card.content')"
-      :text="t('content-card.text')"
-      :date="t('content-card.date')"
+      :title="t('content-card.title.two')"
+      :content="t('content-card.content.two')"
+      :text="t('content-card.text.two')"
+      :date="t('content-card.date.two')"
       :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
     />
   </section>
-  <section><FooterChat :title="footerTitle" /></section>
+  <section><FooterChat :title="'Hello'" /></section>
 </template>
 
 <style scoped lang="scss">

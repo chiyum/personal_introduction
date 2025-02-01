@@ -17,10 +17,13 @@ const toBlog = () => {
   router.push("/blog");
   emit("close", false);
 };
+const closeItem = () => {
+  emit("close", false);
+};
 </script>
 
 <template>
-  <div class="optionFields">
+  <div class="optionFields" @click="closeItem">
     <div class="optionFields-card">
       <p class="optionFields-link optionFields-oneLink" @click="toHome">
         {{ t("global.portfolio") }}
@@ -57,6 +60,7 @@ const toBlog = () => {
     color: var(--dark-100);
     padding: 16px 16px 16px 32px;
     font-size: 40px;
+    cursor: pointer;
   }
   &-oneLink {
     background-color: var(--dark-100);

@@ -1,8 +1,20 @@
 .about{ 
+  @include desktop{
+   padding-top: 100px   }
+  &-avatar{
+    display: none;  
+    @include desktop{
+display: flex;
+object-fit: cover;
+    border-radius: 20px;    }
+  }
     &-bar {
     display: grid;
     grid-template-columns: 50% 50%;
-
+    @include desktop{
+      grid-template-columns:100%;
+    padding: 0;
+    }
 }
     &-left{
     display: flex;
@@ -11,8 +23,6 @@
     padding: 0 24px;
     @include desktop{
     justify-content: start;
-    min-height: 70vh;
-
   }
     &--title{
     display: flex;
@@ -67,6 +77,10 @@
         right: 200px;
         bottom: 140px;
         z-index: 99;
+        @include desktop{
+          display: none;
+  
+        }
         .headshot {
         position: absolute;
         width: 120%;
@@ -86,6 +100,9 @@
         width: 100%;
         padding: 88px;
         position: relative;
+        @include desktop{
+    padding: 24px;
+        }
         &--bar{
             display: flex;
             justify-content: center;

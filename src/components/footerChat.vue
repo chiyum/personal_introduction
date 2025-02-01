@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import ArchAnimation from "@/components/arch-animation.vue";
+import FontMoveAnimation from "@/components/font-move-animation.vue";
+
 import { useI18n } from "@/i18n";
 const { t } = useI18n();
 
 defineProps<{
-  title: string[];
+  title: string;
+  titleColor?: string;
 }>();
 </script>
 
@@ -19,13 +22,12 @@ defineProps<{
       <div class="footerChat-container">
         <div class="footerChat-block">
           <h1 class="footerChat-title">
-            <p
-              v-for="(item, index) in title"
-              :key="index"
+            <font-move-animation
+              direction="top"
+              :title="title"
               class="footerChat-title--text"
-            >
-              {{ item }}
-            </p>
+              :titleColor="titleColor"
+            />
           </h1>
           <div class="footerChat-linkBar">
             <arch-animation color="var(--primary-100)" border-radius="8px">
@@ -122,6 +124,7 @@ defineProps<{
     background-color: var(--dark-100);
     font-size: 24px;
     font-family: var(--fontConcertOne);
+    cursor: pointer;
   }
   &-chatBlock {
     display: flex;
