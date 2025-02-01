@@ -4,17 +4,16 @@
 html,
 body {
   // height: 100%;
-  font-family: "Outfit",
-  "微軟正黑體",
-  Microsoft JhengHei,
-  Tahoma,
-  Geneva,
-  Verdana,
-  sans-serif;
+  font-family:
+    "Outfit",
+    "微軟正黑體",
+    Microsoft JhengHei,
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
   overflow-x: hidden;
 }
-
-
 
 .page-container {
   width: 100%;
@@ -23,41 +22,40 @@ body {
   margin-right: auto;
   padding-left: 88px;
   padding-right: 88px;
-  @include desktop{
+  @include desktop {
     padding-left: 24px;
     padding-right: 24px;
-
   }
 }
-.card-pd{
-  padding: 88px ;
-  @include desktop{
-    padding: 64px 24px ;
+.card-pd {
+  padding: 88px;
+  @include desktop {
+    padding: 64px 24px;
   }
 }
-.connectBtn{
-display: flex;
-z-index: 1;
-letter-spacing: .8px;
-border-radius: 8px;
-justify-content: flex-start;
-align-items: flex-start;
-padding: 16px 24px;
-font-size: 20px;
-font-style: italic;
-font-weight: 700;
-line-height: 1.35;
-position: relative;
-color: var(--white);
-background: var(--primary-100);
-@include smallTablet{
-  width: 100%;
-  justify-content: center;
+.connectBtn {
+  display: flex;
+  z-index: 1;
+  letter-spacing: 0.8px;
+  border-radius: 8px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px 24px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.35;
+  position: relative;
+  color: var(--white);
+  background: var(--primary-100);
+  @include smallTablet {
+    width: 100%;
+    justify-content: center;
+  }
 }
-}
-.connectBtnImg{
-width: 30px;
-height: 30px;
+.connectBtnImg {
+  width: 30px;
+  height: 30px;
 }
 .marquee {
   width: 120%;
@@ -66,25 +64,25 @@ height: 30px;
   position: relative;
   overflow: hidden;
 
-    align-items: center;
-    justify-content: space-around;
-  @include desktop{
-width: 100%;  }
+  align-items: center;
+  justify-content: space-around;
+  @include desktop {
+    width: 100%;
+  }
 }
 @font-face {
-  font-family: 'TradeGothicLTPro';
-  src: url('@/assets/font/TradeGothicLTPro-Cn18.185f3714.woff2') format('woff2');
-  font-weight: 400;  // 正常字重
+  font-family: "TradeGothicLTPro";
+  src: url("@/assets/font/TradeGothicLTPro-Cn18.185f3714.woff2") format("woff2");
+  font-weight: 400; // 正常字重
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'TradeGothicLTPro';
-  src: url('@/assets/font/TradeGothicLTPro-Bold.484908e0.woff2') format('woff2');
-  font-weight: 600;  // 輕字重
+  font-family: "TradeGothicLTPro";
+  src: url("@/assets/font/TradeGothicLTPro-Bold.484908e0.woff2") format("woff2");
+  font-weight: 600; // 輕字重
   font-style: normal;
 }
-
 
 .layout-default {
   min-height: 100vh;
@@ -106,22 +104,23 @@ width: 100%;  }
 
     &-frontPage {
       border: 2px solid var(--white);
-      background-color: var(--dark-100);
-      color: var(--white);
-      padding: 10px 22px;
-      font-size: 30px;
-      font-family: var(--fontConcertOne);
-      font-weight: 700;
-      line-height: 1.35;
+      background: var(--dark-100);
       border-radius: 100%;
       margin-left: 20px;
+      position: relative;
+      width: 50px;
+      height: 50px;
       cursor: pointer;
       @include desktop {
-        padding: 10px 18px;
-        font-size: 20px;
+      }
+      &--img {
+        top: 12px;
+        left: 14px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
       }
     }
-
   }
 
   &-linkBar {
@@ -165,6 +164,10 @@ width: 100%;  }
     padding: 8px 20px;
     border-radius: 8px;
     cursor: pointer;
+    @include smallTablet {
+      font-size: 14px;
+    }
+
     &--fixed {
       position: fixed;
       top: 40px;
@@ -187,8 +190,6 @@ width: 100%;  }
       gap: 16px;
       padding: 8px 20px;
     }
-
-
   }
 
   &connectBar {

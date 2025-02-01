@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import ArchAnimation from "@/components/arch-animation.vue";
 import FontMoveAnimation from "@/components/font-move-animation.vue";
-
+import { openUrl } from "@/utils/tool";
+const mailLink = () => {
+  openUrl("mailto: vuxups70225@gmail.com", { isBlank: true });
+};
 import { useI18n } from "@/i18n";
 const { t } = useI18n();
 
@@ -31,11 +34,19 @@ defineProps<{
           </h1>
           <div class="footerChat-linkBar">
             <arch-animation color="var(--primary-100)" border-radius="8px">
-              <a class="footerChat-link"> {{ t("footer.chat") }} </a>
+              <a
+                class="footerChat-link"
+                href="https://www.linkedin.com/in/hui-xiang-su-a849a0269/?trk=public-profile-join-page"
+                target="_blank"
+              >
+                {{ t("footer.chat") }}
+              </a>
             </arch-animation>
 
             <arch-animation color="var(--primary-100)" border-radius="8px">
-              <a class="footerChat-link"> {{ t("footer.email") }}</a>
+              <a class="footerChat-link" @click="mailLink">
+                {{ t("footer.email") }}
+              </a>
             </arch-animation>
           </div>
         </div>

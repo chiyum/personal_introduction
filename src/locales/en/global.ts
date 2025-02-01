@@ -2,5 +2,6 @@ export default {
   portfolio: "Portfolio",
   about: "About",
   blog: "Blog",
-  linkedin: "Linkedin"
+  linkedin: "Linkedin",
+  connect: "Let's Connect"
 };

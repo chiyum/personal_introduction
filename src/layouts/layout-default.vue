@@ -28,7 +28,15 @@ const toBlog = () => {
   <div class="layout-default">
     <optionFields v-model="isOptionFields"></optionFields>
     <div class="layout-default-head">
-      <a class="layout-default-head-frontPage" @click="toHome">a</a>
+      <div class="layout-default-head-frontPage">
+        <img
+          src="../assets/images/personal_logo/LUNA-cutout.png"
+          @click="toHome"
+          class="layout-default-head-frontPage--img"
+          alt=""
+        />
+      </div>
+
       <div class="layout-default-linkBar">
         <arch-animation color="#ffffff" border-radius="8px">
           <a class="layout-default-link" @click="toHome">
@@ -46,7 +54,11 @@ const toBlog = () => {
           >
         </arch-animation>
         <arch-animation direction="top" color="#ffffff" border-radius="8px">
-          <a class="layout-default-link">
+          <a
+            class="layout-default-link"
+            href="https://www.linkedin.com/in/hui-xiang-su-a849a0269/?trk=public-profile-join-page"
+            target="_blank"
+          >
             {{ t("global.linkedin") }}
             <img
               class="layout-default-img"
@@ -57,8 +69,12 @@ const toBlog = () => {
         </arch-animation>
       </div>
       <div class="layout-default-connect">
-        <a href="" class="layout-default-link"
-          >Let's Connect
+        <a
+          class="layout-default-link"
+          href="https://www.linkedin.com/in/hui-xiang-su-a849a0269/?trk=public-profile-join-page"
+          target="_blank"
+        >
+          {{ t("global.connect") }}
           <img
             class="layout-default-img"
             src="../assets/images/icon/link.png"
@@ -83,8 +99,8 @@ const toBlog = () => {
     </div>
     <div class="layout-default-suspension">
       <div class="layout-default-suspensionBar">
-        <p>G</p>
-        <p class="layout-default-suspensionBar--text">texttexttext</p>
+        <p>L</p>
+        <p class="layout-default-suspensionBar--text"></p>
       </div>
     </div>
     <slot />
