@@ -84,9 +84,12 @@ onBeforeUnmount(() => {
       v-for="(font, index) in fontsAry"
       :key="`${index}-${font}`"
       :class="`font-item-${direction}`"
-      :style="`--animation-delay:${index * animationDelay}ms; --animate-duration: ${animationDuration}ms; color: ${titleColor};`"
+      :style="`--animation-delay:${index * animationDelay}ms; --animate-duration: ${animationDuration}ms; color: ${titleColor};opacity: ${font !== ' ' ? '1' : '0'}`"
     >
-      {{ font }}
+      <template v-if="font === ' '">{{ "1" }}</template>
+      <template v-else>
+        {{ font }}
+      </template>
     </span>
   </div>
 </template>
