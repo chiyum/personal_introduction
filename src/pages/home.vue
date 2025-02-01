@@ -14,7 +14,8 @@ const images = ref<string[]>([
   new URL("@/assets/images/icon/react.png", import.meta.url).href,
   new URL("@/assets/images/icon/js.png", import.meta.url).href,
   new URL("@/assets/images/icon/css.png", import.meta.url).href,
-  new URL("@/assets/images/icon/html.png", import.meta.url).href
+  new URL("@/assets/images/icon/html.png", import.meta.url).href,
+  new URL("@/assets/images/icon/typescript.png", import.meta.url).href
 ]);
 const worksDisplayData = ref<WorkDisplay[]>([
   {
@@ -85,7 +86,7 @@ const worksDisplayData = ref<WorkDisplay[]>([
           </arch-animation>
         </div>
         <h2>{{ t("home.skills") }}</h2>
-        <div class="marquee">
+        <div class="home-marquee">
           <Vue3Marquee>
             <img
               v-for="(image, index) in images"
