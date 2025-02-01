@@ -26,6 +26,7 @@ defineProps<{
 </template>
 <style scoped lang="scss">
 .gameCard {
+  width: 100%;
   &-img {
     border-radius: 16px;
   }

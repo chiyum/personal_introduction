@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import IntroductionCard from "@/components/introductionCard.vue";
-import FooterChat from "@/components/footerChat.vue";
 import gameCard from "@/components/gameCard.vue";
 import getImageUrl from "@/utils/getImageUrl";
 
@@ -39,7 +38,9 @@ const worksData = ref<WorkItem[]>([
 
 <template>
   <div class="about">
-    <img class="about-avatar" src="@/assets/images/avatar.jpg" alt="" />
+    <div class="about-avatar">
+      <img class="about-avatar--img" src="@/assets/images/avatar.jpg" alt="" />
+    </div>
     <div class="about-marquee">
       <Vue3Marquee>
         <h2 class="about-marquee--text">{{ t("about.about") }}</h2>
@@ -92,6 +93,7 @@ const worksData = ref<WorkItem[]>([
           :titleColor="'black'"
           :textColor="'black'"
           :contentColor="'black'"
+          :fontSize="'8vw'"
         />
         <div
           class="about-introduce--block"
@@ -141,16 +143,16 @@ const worksData = ref<WorkItem[]>([
     <section class="card-pd">
       <div>
         <IntroductionCard
-          :title="'Hellooooooo'"
+          :title="'Games'"
           :narrative="t('about.introductionCard.narrative.game')"
           :content="t('about.introductionCard.connect.game')"
         />
       </div>
       <div class="about-gameCard">
         <gameCard
-          title="OOXX"
-          text="xxoo"
-          :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
+          :title="t('about.introductionCard.gameTitle.one')"
+          :text="t('about.introductionCard.gameText.one')"
+          :img="getImageUrl('game/lol.png')"
         />
         <gameCard
           title="OOXX"
@@ -160,7 +162,6 @@ const worksData = ref<WorkItem[]>([
         />
       </div>
     </section>
-    <section><FooterChat :title="'Hello'" /></section>
   </div>
 </template>
 

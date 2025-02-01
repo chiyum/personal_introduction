@@ -10,7 +10,7 @@ export default {
   company: "誠實設計",
   workLocation: "目前居住在台中市西區",
   name: "Luna",
-  skills: "我所擁有的技能",
+  skills: "擁有的技能",
   narrative: "來看看我的作品吧！",
-  connect: "探索以精準與熱情打造的體驗，致力於提供流暢、有趣且高效的互動！"
+  connect: "運用所學的知識,打造出能與使用者互動的網頁作品！"
 };

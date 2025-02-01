@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import IntroductionCard from "@/components/introductionCard.vue";
 import WorksDisplay from "@/components/worksDisplay.vue";
-import FooterChat from "@/components/footerChat.vue";
 import getImageUrl from "@/utils/getImageUrl";
 import { useI18n } from "@/i18n";
 import { ref } from "vue";
@@ -19,40 +18,28 @@ const images = ref<string[]>([
 ]);
 const worksDisplayData = ref<WorkDisplay[]>([
   {
-    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    img: getImageUrl("portfolio/seventeen.png"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "XXXOOO",
-    title: "OOOXXX"
+    summary: "運用React框架製作",
+    title: "Seventeen"
   },
   {
-    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    img: getImageUrl("portfolio/miaoLiHan.png"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "XXXOOO",
-    title: "OOOXXX"
+    summary: "按照UIUX網頁切版",
+    title: "喵立翰 Miao Li-Han"
   },
   {
-    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    img: getImageUrl("portfolio/todolist.png"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "XXXOOO",
-    title: "OOOXXX"
+    summary: "練習增/刪/查/改功能",
+    title: "TodoList"
   },
   {
-    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
+    img: getImageUrl("portfolio/ooxx.png"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "XXXOOO",
-    title: "OOOXXX"
-  },
-  {
-    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
-    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "XXXOOO",
-    title: "OOOXXX"
-  },
-  {
-    img: getImageUrl("worksDisplay/worksDisplay.jpg"),
-    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "XXXOOO",
-    title: "OOOXXX"
+    summary: "運用React框架製作",
+    title: "OOXX井字遊戲"
   }
 ]);
 </script>
@@ -77,7 +64,9 @@ const worksDisplayData = ref<WorkDisplay[]>([
             </p>
             <p class="home-left--introduce__text">
               {{ t("home.jobTitleAt") }}
-              <a href="#"> {{ t("home.company") }}</a>
+              <a href="https://honestdesign.com.tw/">
+                {{ t("home.company") }}</a
+              >
             </p>
             <p class="home-left--introduce__text">
               <span class="home-left--title__symbol">* </span>
@@ -132,7 +121,6 @@ const worksDisplayData = ref<WorkDisplay[]>([
         <WorksDisplay :worksDisplay="worksDisplayData" />
       </div>
     </section>
-    <section><FooterChat :title="'Hello'" /></section>
   </div>
 </template>
 
