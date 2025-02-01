@@ -27,7 +27,7 @@ const worksDisplayData = ref<WorkDisplay[]>([
   {
     img: getImageUrl("portfolio/miaoLiHan.png"),
     url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "按照UIUX網頁切版",
+    summary: "按照UIUX刻畫切版",
     title: "喵立翰 Miao Li-Han"
   },
   {

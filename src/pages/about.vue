@@ -108,12 +108,13 @@ const worksData = ref<WorkItem[]>([
         </div>
       </div>
     </section>
-    <section class="card-pd">
+    <section class="page-container">
       <div>
         <IntroductionCard
           :title="t('about.introductionCard.title.music')"
           :narrative="t('about.introductionCard.narrative.music')"
           :content="t('about.introductionCard.connect.music')"
+          :fontSize="'8vw'"
         />
       </div>
       <div class="spotify">
@@ -143,9 +144,10 @@ const worksData = ref<WorkItem[]>([
     <section class="card-pd">
       <div>
         <IntroductionCard
-          :title="'Games'"
+          :title="t('about.introductionCard.title.game')"
           :narrative="t('about.introductionCard.narrative.game')"
           :content="t('about.introductionCard.connect.game')"
+          :fontSize="'8vw'"
         />
       </div>
       <div class="about-gameCard">
@@ -158,7 +160,6 @@ const worksData = ref<WorkItem[]>([
           title="OOXX"
           text="xxoo"
           :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
-          :imgWidth="'70%'"
         />
       </div>
     </section>
