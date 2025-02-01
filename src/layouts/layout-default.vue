@@ -57,14 +57,16 @@ const toBlog = () => {
         <a
           class="layout-default-link connectLink"
           @click.prevent="showOptionFields"
-          >⋯</a
         >
+          <q-icon name="more_horiz" color="#ffffff" size="24px"></q-icon>
+        </a>
         <teleport to="body" v-if="isOptionFields">
           <a
             class="layout-default-link connectLink layout-default-link--fixed"
             @click.prevent="isOptionFields = false"
-            >⋯</a
           >
+            <q-icon name="more_horiz" color="#ffffff" size="24px"></q-icon>
+          </a>
         </teleport>
       </div>
     </div>
