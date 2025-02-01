@@ -23,6 +23,7 @@ defineProps<{
         :title="title"
         class="introductionCard-title--text"
         :titleColor="titleColor"
+        :fontSize="fontSize"
       />
     </h1>
     <div class="introductionCard-narrativeBar">

@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import FooterChat from "@/components/footerChat.vue";
+
 import optionFields from "@/components/optionFields.vue";
 import ArchAnimation from "@/components/arch-animation.vue";
+import { useI18n } from "@/i18n";
+const { t } = useI18n();
+
 const router = useRouter();
 const isOptionFields = ref(false);
 const showOptionFields = () => {
@@ -26,17 +31,23 @@ const toBlog = () => {
       <a class="layout-default-head-frontPage" @click="toHome">a</a>
       <div class="layout-default-linkBar">
         <arch-animation color="#ffffff" border-radius="8px">
-          <a class="layout-default-link" @click="toHome"> Portfolio </a>
+          <a class="layout-default-link" @click="toHome">
+            {{ t("global.portfolio") }}
+          </a>
         </arch-animation>
         <arch-animation color="#ffffff" border-radius="8px">
-          <a class="layout-default-link" @click="toAbout">About Me</a>
+          <a class="layout-default-link" @click="toAbout">
+            {{ t("global.about") }}</a
+          >
         </arch-animation>
         <arch-animation color="#ffffff" border-radius="8px">
-          <a class="layout-default-link" @click="toBlog">Blog</a>
+          <a class="layout-default-link" @click="toBlog">
+            {{ t("global.blog") }}</a
+          >
         </arch-animation>
         <arch-animation direction="top" color="#ffffff" border-radius="8px">
-          <a class="layout-default-link"
-            >Link
+          <a class="layout-default-link">
+            {{ t("global.linkedin") }}
             <img
               class="layout-default-img"
               src="../assets/images/icon/link.png"
@@ -77,6 +88,7 @@ const toBlog = () => {
       </div>
     </div>
     <slot />
+    <section><FooterChat :title="'Hello'" /></section>
   </div>
 </template>
 

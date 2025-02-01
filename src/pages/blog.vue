@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import IntroductionCard from "@/components/introductionCard.vue";
-import FooterChat from "@/components/footerChat.vue";
 import ContentCard from "@/components/content-card.vue";
 import getImageUrl from "@/utils/getImageUrl";
 
@@ -40,7 +39,6 @@ const { t } = useI18n();
       :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
     />
   </section>
-  <section><FooterChat :title="'Hello'" /></section>
 </template>
 
 <style scoped lang="scss">
