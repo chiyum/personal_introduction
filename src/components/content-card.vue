@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import ArchAnimation from "@/components/arch-animation.vue";
+import { openUrl } from "@/utils/tool";
 defineProps<{
   title: string;
   content: string;
   text: string;
   date: string;
   img: string;
+  url: string;
 }>();
 </script>
 
@@ -16,7 +18,7 @@ defineProps<{
     border-radius="8px"
     :archHeight="0.1"
   >
-    <div class="contentCard">
+    <div class="contentCard" @click="openUrl(url)">
       <img class="contentCard-img" :src="img" alt="" />
       <div class="contentCard-block">
         <h1 class="contentCard-title">{{ title }}</h1>
@@ -52,6 +54,7 @@ defineProps<{
     width: 100%;
     max-width: 360px;
     overflow: hidden;
+    object-fit: cover;
     @include desktop {
       max-width: 100%;
     }

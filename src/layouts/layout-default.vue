@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import { useI18n } from "@/i18n";
+import { useAppStore } from "@/store/app";
 import FooterChat from "@/components/footerChat.vue";
-
 import optionFields from "@/components/optionFields.vue";
 import ArchAnimation from "@/components/arch-animation.vue";
-import { useI18n } from "@/i18n";
+
+const appStore = useAppStore();
 const { t } = useI18n();
 
 const router = useRouter();
 const isOptionFields = ref(false);
 const showOptionFields = () => {
   isOptionFields.value = true;
-  console.log("666666", isOptionFields.value);
 };
 const toHome = () => {
   router.push("/home");
@@ -30,7 +31,7 @@ const toBlog = () => {
     <div class="layout-default-head">
       <div class="layout-default-head-frontPage">
         <img
-          src="../assets/images/personal_logo/LUNA-cutout.png"
+          src="@/assets/images/personal_logo/George-cutout.png"
           @click="toHome"
           class="layout-default-head-frontPage--img"
           alt=""
@@ -56,7 +57,7 @@ const toBlog = () => {
         <arch-animation direction="top" color="#ffffff" border-radius="8px">
           <a
             class="layout-default-link"
-            href="https://www.linkedin.com/in/hui-xiang-su-a849a0269/?trk=public-profile-join-page"
+            :href="appStore.linkedin"
             target="_blank"
           >
             {{ t("global.linkedin") }}
@@ -71,7 +72,7 @@ const toBlog = () => {
       <div class="layout-default-connect">
         <a
           class="layout-default-link"
-          href="https://www.linkedin.com/in/hui-xiang-su-a849a0269/?trk=public-profile-join-page"
+          :href="appStore.linkedin"
           target="_blank"
         >
           {{ t("global.connect") }}
@@ -99,8 +100,8 @@ const toBlog = () => {
     </div>
     <div class="layout-default-suspension">
       <div class="layout-default-suspensionBar">
-        <p>L</p>
-        <p class="layout-default-suspensionBar--text"></p>
+        <p>G</p>
+        <p class="layout-default-suspensionBar--text">George</p>
       </div>
     </div>
     <slot />

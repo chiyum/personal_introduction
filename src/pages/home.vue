@@ -20,28 +20,28 @@ const images = ref<string[]>([
 ]);
 const worksDisplayData = ref<WorkDisplay[]>([
   {
-    img: getImageUrl("portfolio/seventeen.png"),
-    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "運用React框架製作",
-    title: "Seventeen"
+    img: getImageUrl("portfolio/mobile_game_project.png"),
+    url: "https://chiyum.github.io/game_platform/#/loading",
+    summary: "與設計師合作的手機版本遊戲平台",
+    title: "手機遊戲平台"
   },
   {
-    img: getImageUrl("portfolio/miaoLiHan.png"),
-    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "按照UIUX刻畫切版",
-    title: "喵立翰 Miao Li-Han"
+    img: getImageUrl("portfolio/9M.png"),
+    url: "https://pc.9mbet01.com/",
+    summary: "過去的公司專案",
+    title: "遊戲平台"
   },
   {
-    img: getImageUrl("portfolio/todolist.png"),
-    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "練習增/刪/查/改功能",
-    title: "TodoList"
+    img: getImageUrl("portfolio/start_project.png"),
+    url: "https://chiyum.github.io/vite_start_project/#/home",
+    summary: "起手架構專案與CSS動畫",
+    title: "起手專案"
   },
   {
-    img: getImageUrl("portfolio/ooxx.png"),
-    url: "https://www.youtube.com/watch?v=1F3OGIFnW1k",
-    summary: "運用React框架製作",
-    title: "OOXX井字遊戲"
+    img: getImageUrl("portfolio/store_project.png"),
+    url: "https://chiyum.github.io/electricity/",
+    summary: "純切版的外包專案",
+    title: "廠商外包"
   }
 ]);
 </script>
@@ -118,10 +118,7 @@ const worksDisplayData = ref<WorkDisplay[]>([
         <header-host>
           <img
             class="home-right--img"
-            srcset="
-              https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202-p-500.png 500w,
-              https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202.png       768w
-            "
+            src="@/assets/images/card_green.png"
             alt=""
           />
         </header-host>

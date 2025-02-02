@@ -40,6 +40,7 @@ defineProps<{
     overflow: hidden;
     transition: transform 0.5s ease; /* 平滑過渡 */
     width: 100%;
+    object-fit: cover;
     @include desktop {
       width: 100%;
     }

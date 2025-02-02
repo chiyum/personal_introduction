@@ -1,21 +1,23 @@
 export default {
-  helloTitle: "嘿，大家好！我是 Luna",
+  helloTitle: "嘿，大家好！我是 George",
   im: " 我是一名",
-  jobTitle: " 使用者體驗設計師",
-  openingText: " 準備好幫助你打造前所未有的體驗！",
+  jobTitle: " 資深前端工程師",
+  openingText: " 我已經準備好使用我的技術加入團隊創造我的價值。",
   button: "聯絡我",
   about: "Happy to see you",
-  "introductionCard.title": "電影清單",
-  "introductionCard.narrative": "我的人生電影清單",
-  "introductionCard.connect": "這些電影都曾經在某一刻接住我,也推薦給你們！",
+  "introductionCard.title": "公司經歷",
+  "introductionCard.narrative": "這是我過去的工作經歷",
+  "introductionCard.connect": "每一份工作都是我成長的步伐中不可或缺的養分",
   "introductionCard.narrative.music": "這是我正在聆聽的音樂",
   "introductionCard.connect.music":
-    "這些是我在設計線框圖時會聽的歌曲。我也很樂意發掘更多好音樂，懂我意思吧 😉？",
+    "有一句俗語是這麼說的，I人喜歡的東西多數是音樂。\n而E人喜歡的東西是I人。\n由此可見我是I人。",
   "introductionCard.title.music": "我的播放清單",
   "introductionCard.title.game": "遊戲",
   "introductionCard.narrative.game": "這是我正在玩的遊戲",
   "introductionCard.connect.game":
-    "寫code之餘也會打打遊戲!戰旗聯盟目前卡在金牌上不去T_T",
+    "雖然我不畏勞累與加班，但偶爾閒暇時間還是會玩玩遊戲放放鬆。",
   "introductionCard.gameTitle.one": "英雄聯盟LOL",
-  "introductionCard.gameText.one": "AR or 聯盟戰棋"
+  "introductionCard.gameText.one": "聯盟戰棋",
+  "introductionCard.gameTitle.two": "柏德之門",
+  "introductionCard.gameText.two": "龍與地下城"
 };

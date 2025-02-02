@@ -29,23 +29,18 @@ defineProps<{
   width: 100%;
   &-img {
     border-radius: 16px;
-    width: 500px;
-    height: 300px;
-    object-fit: cover;
-    @include desktop {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  &-content {
+    aspect-ratio: 16/9;
   }
   &-text {
     color: var(--primary-400);
     letter-spacing: 0.8px;
-    font-size: 20px;
+    font-size: 1.8vw;
     font-style: italic;
     line-height: 1;
     font-family: var(--fontConcertOne);
+    @include bigDesktop {
+      font-size: 20px;
+    }
   }
   &-title {
     color: var(--white);

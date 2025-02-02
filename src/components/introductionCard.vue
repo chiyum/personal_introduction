@@ -48,8 +48,9 @@ defineProps<{
     align-content: center;
     color: var(--white);
     text-transform: uppercase;
+    margin-left: -0.4vw;
     padding-top: 20px;
-    padding-left: 4px;
+    //padding-left: 4px;
     padding-right: 4px;
     font-family: var(--fontConcertOne);
     line-height: 0.95;
@@ -64,7 +65,10 @@ defineProps<{
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 500px;
+    width: 100%;
+    @include bigDesktop {
+      width: 500px;
+    }
     @include desktop {
       width: 100%;
     }
@@ -73,16 +77,22 @@ defineProps<{
     font-family: var(--fontConcertOne);
     color: var(--white);
     letter-spacing: 0.5px;
-    font-size: 32px;
+    font-size: 2vw;
     font-style: italic;
     line-height: 1.1;
+    @include bigDesktop {
+      font-size: 32px;
+    }
   }
   &-content {
     color: var(--low-contrast-text);
     letter-spacing: 0.3px;
-    font-size: 18px;
+    font-size: 1vw;
     font-weight: 500;
     line-height: 1.5;
+    @include bigDesktop {
+      font-size: 18px;
+    }
   }
 }
 </style>

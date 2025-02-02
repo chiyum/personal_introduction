@@ -1,8 +1,8 @@
 export default {
-  text: "「走得多慢都無所謂，只要你不停下腳步。」",
-  signature: "-安迪．沃荷",
-  made: "由Luna製作 | 2025",
-  chat: "來聊聊吧",
+  text: "「什麼都無法捨棄的人，什麼也改變不了。」",
+  signature: "-阿爾敏．亞魯雷特",
+  made: "由George製作 | 2025",
+  chat: "與我聯繫",
   email: "寄信給我",
   aboutMe: "關於我"
 };

@@ -35,13 +35,13 @@ body {
 }
 .connectBtn {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: 1;
   letter-spacing: 0.8px;
   border-radius: 8px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 16px 24px;
-  font-size: 20px;
+  padding: 14px 22px;
+  font-size: 1.5vw;
   font-style: italic;
   font-weight: 700;
   line-height: 1.35;
@@ -49,16 +49,24 @@ body {
   color: var(--white);
   background: var(--primary-100);
   @include smallTablet {
-    width: 100%;
+    width: 140px;
     justify-content: center;
+  }
+  @include bigDesktop {
+    font-size: 20px;
   }
 }
 .connectBtnImg {
-  width: 30px;
-  height: 30px;
+  margin-left: 0.5vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  @include bigDesktop {
+    width: 30px;
+    height: 30px;
+  }
 }
 .home-marquee {
-  width: 120%;
+  width: 100%;
   padding-top: 16px;
   display: flex;
   position: relative;
@@ -103,22 +111,25 @@ body {
     }
 
     &-frontPage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 2px solid var(--white);
       background: var(--dark-100);
       border-radius: 100%;
       margin-left: 20px;
       position: relative;
-      width: 50px;
-      height: 50px;
+      width: 3vw;
+      height: 3vw;
+      min-width: 50px;
+      min-height: 50px;
       cursor: pointer;
       @include desktop {
       }
       &--img {
-        top: 12px;
-        left: 14px;
-        position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
       }
     }
   }
@@ -238,4 +249,35 @@ body {
   padding: 6px 10px;
   border-radius: 100%;
   cursor: pointer;
+}
+
+.page-section {
+  padding: 88px;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include desktop {
+    padding: 64px 24px;
+  }
+}
+
+.grid-col {
+  display: grid !important;
+  align-items: flex-start !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  &-two {
+    grid-template-columns: repeat(2, 1fr);
+    @include tablet {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  &-three {
+    grid-template-columns: repeat(3, 1fr);
+    @include tablet {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
 }

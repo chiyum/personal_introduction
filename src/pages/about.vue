@@ -17,29 +17,62 @@ interface WorkItem {
 
 const spotifyEmbeds: spotifyEmbed[] = [
   {
-    uri: "track/6oilrypHWm0iylwgX6ujQc",
+    uri: "https://open.spotify.com/embed/track/6oilrypHWm0iylwgX6ujQc?utm_source=generator",
     theme: "dark"
   },
   {
-    uri: "episode/7makk4oTQel546B0PZlDM5",
+    uri: "https://open.spotify.com/embed/track/7JY1LciLO1MpI3XikSUgzy?utm_source=generator",
+    theme: "dark"
+  }
+];
+
+const spotifyEmbedsTwo: spotifyEmbed[] = [
+  {
+    uri: "https://open.spotify.com/embed/track/49gU95GpWNOY4hzUWYefjp?utm_source=generator",
+    theme: "dark"
+  },
+  {
+    uri: "https://open.spotify.com/embed/track/17KAKg35T2DDLFAVy7MjPb?utm_source=generator&theme=0",
+    theme: "dark"
+  },
+  {
+    uri: "https://open.spotify.com/embed/track/3e12wnQn65ERiv96IChro2?utm_source=generator",
     theme: "dark"
   }
 ];
 
 const worksData = ref<WorkItem[]>([
-  { title: "OOOXXX |", text: "XXXOOO", date: "2025" },
-  { title: "OOOXXX |", text: "XXXOOO", date: "2025" },
-  { title: "OOOXXX |", text: "XXXOOO", date: "2025" },
-  { title: "OOOXXX |", text: "XXXOOO", date: "2025" },
-  { title: "OOOXXX |", text: "XXXOOO", date: "2025" },
-  { title: "OOOXXX |", text: "XXXOOO", date: "2025" }
+  {
+    title: "傑思數位",
+    text: "這份工作我任職了全端工程師開發軟體與軟體串接硬體的功能",
+    date: "2024/3 - 至今"
+  },
+  {
+    title: "享亦數位",
+    text: "這份工作我擔任前端工程師，與後端合作串接直播視訊的功能",
+    date: "2023/8 - 2024/3"
+  },
+  {
+    title: "巨兆數位",
+    text: "這份工作我接觸了遊戲產業相關的開發",
+    date: "2022/3 - 2023/8"
+  },
+  {
+    title: "群益數位",
+    text: "是我第一份前端工程師工作，開發後台系統",
+    date: "2021/10 - 2022/2"
+  }
 ]);
 </script>
 
 <template>
   <div class="about">
     <div class="about-avatar">
-      <img class="about-avatar--img" src="@/assets/images/avatar.jpg" alt="" />
+      <img
+        class="about-avatar--img"
+        src="@/assets/images/card_green2.png"
+        alt=""
+      />
     </div>
     <div class="about-marquee">
       <Vue3Marquee>
@@ -64,7 +97,7 @@ const worksData = ref<WorkItem[]>([
           <button class="connectBtn">
             {{ t("about.button") }}
             <img
-              class="about-left--img"
+              class="connectBtnImg"
               src="../assets/images/icon/link.png"
               alt=""
             />
@@ -75,10 +108,7 @@ const worksData = ref<WorkItem[]>([
         <header-host>
           <img
             class="about-right--img"
-            srcset="
-              https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202-p-500.png 500w,
-              https://cdn.prod.website-files.com/63c96fbd3f3abb1db1cbcab9/66f17147b276d2788ca91113_Purple%20Card%202.png       768w
-            "
+            src="@/assets/images/card_green2.png"
             alt=""
           />
         </header-host>
@@ -117,7 +147,7 @@ const worksData = ref<WorkItem[]>([
           :fontSize="'8vw'"
         />
       </div>
-      <div class="spotify">
+      <div class="spotify grid-col grid-col-two">
         <spotify-iframe
           v-for="({ uri, theme }, index) in spotifyEmbeds"
           :key="`${index}-${uri}`"
@@ -140,8 +170,31 @@ const worksData = ref<WorkItem[]>([
         <!--          </iframe>-->
         <!--        </div>-->
       </div>
+      <div class="spotify grid-col grid-col-three">
+        <spotify-iframe
+          v-for="({ uri, theme }, index) in spotifyEmbedsTwo"
+          :key="`${index}-${uri}`"
+          :song-url="uri"
+          :theme="theme"
+          class="spotify-block"
+        ></spotify-iframe>
+        <!--        <div-->
+        <!--          v-for="(item, index) in spotifyEmbedUrl"-->
+        <!--          :key="index"-->
+        <!--          class="spotify-block"-->
+        <!--        >-->
+        <!--          <iframe-->
+        <!--            class="spotify-iframe"-->
+        <!--            :src="item"-->
+        <!--            frameborder="0"-->
+        <!--            allowfullscreen-->
+        <!--            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"-->
+        <!--          >-->
+        <!--          </iframe>-->
+        <!--        </div>-->
+      </div>
     </section>
-    <section class="card-pd">
+    <section class="card-pd page-section">
       <div>
         <IntroductionCard
           :title="t('about.introductionCard.title.game')"
@@ -157,9 +210,9 @@ const worksData = ref<WorkItem[]>([
           :img="getImageUrl('game/lol.png')"
         />
         <gameCard
-          title="OOXX"
-          text="xxoo"
-          :img="getImageUrl('worksDisplay/worksDisplay.jpg')"
+          :title="t('about.introductionCard.gameTitle.two')"
+          :text="t('about.introductionCard.gameText.two')"
+          :img="getImageUrl('worksDisplay/baldursGate.webp')"
         />
       </div>
     </section>

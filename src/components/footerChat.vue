@@ -2,11 +2,15 @@
 import ArchAnimation from "@/components/arch-animation.vue";
 import FontMoveAnimation from "@/components/font-move-animation.vue";
 import { openUrl } from "@/utils/tool";
-const mailLink = () => {
-  openUrl("mailto: vuxups70225@gmail.com", { isBlank: true });
-};
 import { useI18n } from "@/i18n";
+import { useAppStore } from "@/store/app";
+
 const { t } = useI18n();
+const appStore = useAppStore();
+
+const mailLink = () => {
+  openUrl(`mailto: ${appStore.mail}`, { isBlank: true });
+};
 
 defineProps<{
   title: string;
@@ -36,7 +40,7 @@ defineProps<{
             <arch-animation color="var(--primary-100)" border-radius="8px">
               <a
                 class="footerChat-link"
-                href="https://www.linkedin.com/in/hui-xiang-su-a849a0269/?trk=public-profile-join-page"
+                :href="appStore.linkedin"
                 target="_blank"
               >
                 {{ t("footer.chat") }}
