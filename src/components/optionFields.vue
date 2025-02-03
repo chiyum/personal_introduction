@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { useI18n } from "@/i18n";
+import { openUrl } from "@/utils/tool";
+import { useAppStore } from "@/store/app";
 
 const emit = defineEmits(["close"]);
 
 const { t } = useI18n();
 const router = useRouter();
 const route = useRoute();
+const appStore = useAppStore();
 
 const currentRoute = computed(() => route.path);
 const isShow = defineModel<boolean>();
@@ -100,7 +103,7 @@ const toBlog = () => {
           </span>
           <q-icon name="arrow_forward" color="#ffffff"></q-icon>
         </p>
-        <p class="optionFields-link" @click="toHome">
+        <p class="optionFields-link" @click="openUrl(appStore.linkedin)">
           <span>
             {{ t("global.linkedin") }}
           </span>

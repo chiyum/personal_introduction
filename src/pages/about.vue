@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import IntroductionCard from "@/components/introductionCard.vue";
 import gameCard from "@/components/gameCard.vue";
+import SpotifyIframe from "@/components/spotify-iframe.vue";
 import getImageUrl from "@/utils/getImageUrl";
 
+import { spotifyEmbed } from "@/types/global";
 import { useI18n } from "@/i18n";
 import { Vue3Marquee } from "vue3-marquee";
 import { ref } from "vue";
-import SpotifyIframe from "@/components/spotify-iframe.vue";
-import { spotifyEmbed } from "@/types/global";
+import { openUrl } from "@/utils/tool";
+import { useAppStore } from "@/store/app";
+
+const appStore = useAppStore();
 const { t } = useI18n();
 interface WorkItem {
   title: string;
@@ -94,7 +98,7 @@ const worksData = ref<WorkItem[]>([
               {{ t("about.openingText") }}
             </p>
           </div>
-          <button class="connectBtn">
+          <button class="connectBtn" @click="openUrl(appStore.linkedin)">
             {{ t("about.button") }}
             <img
               class="connectBtnImg"
